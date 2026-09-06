@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>✉ Para María ✉</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --rosa: #e8ace1;
+  --rosa-oscuro: #b85a8a;
+  --azul-oscuro: #1a1c3a;
+  --azul-oscuro-2: #252853;
+  --azul-claro: #7ab8d4;
+  --oro-antiguo: #c9a96e;
+  --negro-tepsoro: #0d0d15;
+}
+
+body {
+  background: var(--negro-tepsoro);
+  color: var(--rosa);
+  font-family: 'Playfair Display', serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(122, 184, 212, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(232, 172, 225, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 0%, rgba(201, 169, 110, 0.05) 0%, transparent 40%);
+}
+
+/* Fondo de estrellas llenas de polvo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1.5px 1.5px at 50% 10%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1.5px 1.5px at 15% 85%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.5), transparent);
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 0;
+  animation: twinkle 8s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+}
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* --- CAPA DE ENTRADA CON TAPIZ --- */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--negro-tepsoro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 1.8s ease, visibility 1.8s ease;
+}
+
+.intro-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.corona-rosas {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 30%, rgba(232,172,225,0.35), rgba(232,172,225,0) 70%);
+  animation: breathe-rosa 4s ease-in-out infinite;
+}
+
+.corona-azul {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 30%, rgba(122,184,212,0.3), rgba(122,184,212,0) 70%);
+  animation: breathe-azul 5s ease-in-out infinite 0.5s;
+}
+
+.corona-gold {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 30%, rgba(201,169,110,0.25), rgba(201,169,110,0) 70%);
+  animation: breathe-gold 6s ease-in-out infinite 1s;
+}
+
+@keyframes breathe-rosa {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+@keyframes breathe-azul {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.4); opacity: 1; }
+}
+@keyframes breathe-gold {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.2); opacity: 0.9; }
+}
+
+.intro-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(24px, 6vw, 48px);
+  color: var(--oro-antiguo);
+  text-align: center;
+  letter-spacing: 6px;
+  text-shadow:
+    0 0 10px rgba(201,169,110,0.6),
+    0 0 30px rgba(201,169,110,0.3);
+  margin-bottom: 30px;
+  animation: fadeUp 2s ease forwards;
+}
+
+.intro-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(14px, 3vw, 20px);
+  color: var(--azul-claro);
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  animation: fadeUp 2s ease 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.intro-enter-btn {
+  font-family: 'Cinzel Decorative', serif;
+  background: linear-gradient(135deg, var(--rosa-oscuro), var(--azul-oscuro));
+  color: #fff;
+  border: 1px solid var(--oro-antiguo);
+  padding: 14px 40px;
+  font-size: clamp(14px, 3vw, 18px);
+  letter-spacing: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: all 0.4s;
+  box-shadow:
+    0 0 15px rgba(201,169,110,0.2),
+    inset 0 0 10px rgba(0,0,0,0.4);
+  animation: fadeUp 2s ease 0.8s forwards;
+  opacity: 0;
+}
+
+.intro-enter-btn:hover {
+  background: linear-gradient(135deg, var(--azul-oscuro), var(--rosa-oscuro));
+  box-shadow:
+    0 0 25px rgba(201,169,110,0.5),
+    inset 0 0 15px rgba(0,0,0,0.5);
+  transform: scale(1.03);
+}
+
+/* --- DIBUJOS GÓTICOS SVG EN LA CAPA DE ENTRADA --- */
+.gothic-svg-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+/* --- EL CUERPO DE LA CARTA --- */
+.carta-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.4s ease, transform 1.4s ease;
+}
+
+.carta-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Marco de la carta estilo pergamino gótico */
+.carta-marca {
+  position: relative;
+  border: 1px solid var(--oro-antiguo);
+  background:
+    linear-gradient(135deg, rgba(37,40,83,0.9), rgba(13,13,21,0.95));
+  padding: 0;
+  box-shadow:
+    0 0 30px rgba(201,169,110,0.15),
+    0 0 60px rgba(37,40,83,0.4),
+    inset 0 0 80px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+.carta-marca::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px; bottom: -1px;
+  border: 1px solid rgba(201,169,110,0.3);
+  pointer-events: none;
+}
+
+.carta-marca::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(122,184,212,0.15);
+  pointer-events: none;
+}
+
+/* Decoración de esquinas góticas */
+.carta-marca .corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-color: var(--oro-antiguo);
+  border-style: solid;
+  opacity: 0.5;
+}
+.carta-marca .corner-tl { top: 8px; left: 8px;
+  border-width: 2px 0 0 2px; }
+.carta-marca .corner-tr { top: 8px; right: 8px;
+  border-width: 2px 2px 0 0; }
+.carta-marca .corner-bl { bottom: 8px; left: 8px;
+  border-width: 0 0 2px 2px; }
+.carta-marca .corner-br { bottom: 8px; right: 8px;
+  border-width: 0 2px 2px 0; }
+
+.carta-header {
+  text-align: center;
+  padding: 30px 20px 15px;
+  background: linear-gradient(180deg,
+    rgba(201,169,110,0.1),
+    transparent 60%);
+  border-bottom: 1px solid rgba(201,169,110,0.3);
+  position: relative;
+}
+
+.carta-header .pluma-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--oro-antiguo), transparent);
+  margin: 15px auto;
+}
+
+.carta-header h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(20px, 5vw, 32px);
+  color: var(--oro-antiguo);
+  letter-spacing: 5px;
+  text-shadow: 0 0 10px rgba(201,169,110,0.3);
+}
+
+.carta-header .fecha {
+  font-style: italic;
+  color: var(--azul-claro);
+  font-size: clamp(12px, 2.5vw, 15px);
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+/* Contenido del cuerpo — texto */
+.carta-body {
+  padding: 25px 20px;
+  font-size: clamp(14px, 3.2vw, 17px);
+  line-height: 1.8;
+  color: var(--rosa);
+}
+
+.carta-body p {
+  margin-bottom: 18px;
+}
+
+.carta-body .destacado {
+  color: var(--oro-antigudo);
+  font-style: italic;
+  border-left: 2px solid var(--oro-antiguo);
+  padding-left: 15px;
+  margin: 20px 0;
+}
+
+/* Insertar imagen de loto SVG */
+.loto-divider {
+  text-align: center;
+  margin: 25px 0;
+  padding: 15px 0;
+  position: relative;
+}
+
+.loto-divider svg {
+  width: clamp(120px, 25vw, 180px);
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(232,172,225,0.3));
+  animation: float-loto 4s ease-in-out infinite;
+}
+
+@keyframes float-loto {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.loto-divider::before,
+.loto-divider::after {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--azul-claro), transparent);
+  vertical-align: middle;
+  margin: 0 15px;
+}
+
+/* Cita / verso destacado */
+.verso {
+  text-align: center;
+  font-style: italic;
+  color: var(--azul-claro);
+  padding: 20px;
+  margin: 20px 0;
+  border-top: 1px solid rgba(122,184,212,0.3);
+  border-bottom: 1px solid rgba(122,184,212,0.3);
+  position: relative;
+}
+
+.verso::before {
+  content: '❝';
+  font-size: 24px;
+  color: var(--oro-antigudo);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+}
+
+.verso::after {
+  content: '❞';
+  font-size: 24px;
+  color: var(--oro-antigudo);
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+}
+
+/* Firma final */
+.carta-footer {
+  text-align: center;
+  padding: 15px 20px 30px;
+  border-top: 1px solid rgba(201,169,110,0.2);
+  margin-top: 10px;
+  background: linear-gradient(0deg,
+    rgba(201,169,110,0.08),
+    transparent 60%);
+}
+
+.carta-footer .firma {
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--oro-antigudo);
+  font-size: clamp(16px, 4vw, 24px);
+  letter-spacing: 3px;
+  text-shadow: 0 0 8px rgba(201,169,110,0.3);
+  margin-top: 10px;
+}
+
+.carta-footer .corazon {
+  display: inline-block;
+  font-size: clamp(18px, 4vw, 26px);
+  animation: heartbeat 1.5s ease-in-out infinite;
+  color: var(--rosa-oscuro);
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.2); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.15); }
+  60% { transform: scale(1); }
+}
+
+/* --- DIBUJOS GÓTICOS LATERALES FLOTANTES --- */
+.gothic-watermark {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.07;
+  animation: drift-gothic 20s linear infinite;
+}
+
+.gothic-watermark.top-right {
+  top: 5%;
+  right: 0;
+  width: 120px;
+  transform: rotate(15deg);
+}
+
+.gothic-watermark.bottom-left {
+  bottom: 5%;
+  left: 0;
+  width: 100px;
+  transform: rotate(-10deg);
+}
+
+.gothic-watermark.bottom-right {
+  bottom: 10%;
+  right: 0;
+  width: 80px;
+  transform: rotate(25deg);
+}
+
+@keyframes drift-gothic {
+  0% { opacity: 0.07; transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { opacity: 0.12; }
+  100% { opacity: 0.07; transform: translateY(-40px) rotate(var(--r, 0deg)); }
+}
+
+/* --- SCROLLBAR personalizada --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--negro-tepsoro); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--rosa-oscuro), var(--azul-claro));
+  border-radius: 3px;
+}
+
+/* --- SELECT --- */
+::selection {
+  background: var(--rosa-oscuro);
+  color: var(--negro-tepsoro);
+}
+
+/* Responsive móvil */
+@media (max-width: 480px) {
+  .carta-body { padding: 18px 15px; }
+  .carta-marca .corner { width: 40px; height: 40px; }
+  .corner-tl { top: 5px; left: 5px; }
+  .corner-tr { top: 5px; right: 5px; }
+  .corner-bl { bottom: 5px; left: 5px; }
+  .corner-br { bottom: 5px; right: 5px; }
+}
+
+/* Fade-in de elementos al hacer scroll (simple) */
+.carta-body p { opacity: 0; transform: translateY(10px); animation: fadeInUp 0.8s ease forwards; }
+.carta-body p:nth-child(1) { animation-delay: 0.2s; }
+.carta-body p:nth-child(2) { animation-delay: 0.4s; }
+.carta-body p:nth-child(3) { animation-delay: 0.6s; }
+.carta-body p:nth-child(4) { animation-delay: 0.8s; }
+.carta-body p:nth-child(5) { animation-delay: 1.0s; }
+.carta-body p:nth-child(6) { animation-delay: 1.2s; }
+.carta-body p:nth-child(7) { animation-delay: 1.4s; }
+.carta-body p:nth-child(8) { animation-delay: 1.6s; }
+.carta-body p:nth-child(9) { animation-delay: 1.8s; }
+.carta-body p:nth-child(10) { animation-delay: 2.0s; }
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+</head>
+<body>
+
+<!-- CAPA DE ENTRADA (intro) -->
+<div class="intro-overlay" id="introOverlay">
+  <div class="corona-rosas"></div>
+  <div class="corona-azul"></div>
+  <div class="corona-gold"></div>
+
+  <!-- Dibujo gótico floreado de fondo en SVG -->
+  <svg class="gothic-svg-bg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="glow-bg" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#c9a96e" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#c9a96e" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="200" cy="200" r="180" fill="url(#glow-bg)"/>
+    <!-- Rosa gótica -->
+    <g fill="none" stroke="#e8ace1" stroke-width="0.6" opacity="0.6">
+      <path d="M200 40 C 200 40, 230 80, 250 100 C 270 80, 300 55, 300 80 C 320 80, 330 120, 310 160 C 340 200, 310 240, 270 240 C 260 260, 250 280, 230 280 C 220 300, 200 310, 200 310 C 200 310, 180 300, 170 280 C 150 280, 140 260, 130 240 C 90 240, 60 200, 90 160 C 70 120, 80 80, 100 80 C 100 55, 130 80, 150 100 C 170 80, 200 40, 200 40 Z"/>
+    </g>
+    <!-- Arco gótico -->
+    <g fill="none" stroke="#7ab8d4" stroke-width="0.8" opacity="0.5">
+      <path d="M80 340 L80 160 C 80 100, 200 60, 320 160 L320 340"/>
+      <path d="M100 340 L100 180 C 100 130, 200 100, 300 180 L300 340" opacity="0.4"/>
+      <circle cx="200" cy="120" r="3" fill="#c9a96e"/>
+    </g>
+    <!-- Estrellas -->
+    <g fill="#fff">
+      <circle cx="50" cy="50" r="1" opacity="0.8"/>
+      <circle cx="350" cy="80" r="1.2" opacity="0.6"/>
+      <circle cx="370" cy="300" r="1" opacity="0.7"/>
+      <circle cx="30" cy="320" r="0.8" opacity="0.5"/>
+      <circle cx="200" cy="20" r="1.5" opacity="0.9"/>
+    </g>
+  </svg>
+
+  <h1 class="intro-title">✉ Para María ✉</h1>
+  <p class="intro-subtitle">una carta bajo la luna</p>
+
+  <button class="intro-enter-btn" id="enterBtn">✧ Abrir la carta ✧</button>
+</div>
+
+<!-- CUERPO DE LA CARTA -->
+<div class="wrapper">
+  <div class="carta-container" id="cartaContainer">
+    <div class="carta-marca">
+      <!-- Esquinas decoradas -->
+      <div class="corner corner-tl"></div>
+      <div class="corner corner-tr"></div>
+      <div class="corner corner-bl"></div>
+      <div class="corner corner-br"></div>
+
+      <div class="carta-header">
+        <h1>✧ CARTA DE AMOR ✧</h1>
+        <div class="pluma-divider"></div>
+        <div class="fecha">bajo la luz de la luna, para ti</div>
+      </div>
+
+      <div class="carta-body">
+        <p><strong>María...</strong></p>
+
+        <p>tal vez estemos locos o seamos raros, pero prefiero eso mil veces antes que ser el típico "hombre" que solo busca tener relaciones sexuales o algo efímero.</p>
+
+        <p>No sé hasta qué punto llegaré en esta vida, o en lo nuestro contigo... pero estoy <em>completamente seguro</em> de que quiero que te quedes a mi lado lo más que se pueda.</p>
+
+        <p>Más que el centro de mi universo, eres para mí como una <strong>flor de loto</strong>, una flor especial que quiero cuidar para que nunca se marchite.</p>
+
+        <div class="loto-divider">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="lotoGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#e8ace1"/>
+                <stop offset="60%" stop-color="#b85a8a"/>
+                <stop offset="100%" stop-color="#7ab8d4"/>
+              </radialGradient>
+            </defs>
+            <!-- Hojas de loto -->
+            <g fill="none" stroke="#7ab8d4" stroke-width="1" opacity="0.6">
+              <path d="M100 180 C 80 160, 40 130, 50 90 C 55 70, 80 60, 100 90" />
+              <path d="M100 180 C 120 160, 160 130, 150 90 C 145 70, 120 60, 100 90" />
+              <path d="M100 180 C 60 170, 20 150, 30 110 C 38 90, 70 85, 100 105" />
+              <path d="M100 180 C 140 170, 180 150, 170 110 C 162 90, 130 85, 100 105" />
+            </g>
+            <!-- Pétalos exteriores -->
+            <g fill="url(#lotoGrad)" opacity="0.85">
+              <path d="M100 50 C 95 70, 80 90, 85 110 C 80 120, 85 130, 100 125 C 115 130, 120 120, 115 110 C 120 90, 105 70, 100 50 Z"/>
+              <path d="M100 50 C 80 65, 55 80, 60 105 C 55 115, 65 125, 95 115 C 110 125, 135 115, 140 105 C 145 80, 120 65, 100 50 Z" opacity="0.6"/>
+              <path d="M100 55 C 125 70, 150 90, 140 115 C 145 120, 135 130, 115 120 C 100 130, 90 120, 95 110 C 80 90, 95 70, 100 55 Z" opacity="0.5"/>
+            </g>
+            <!-- Centro -->
+            <circle cx="100" cy="100" r="12" fill="#c9a96e" opacity="0.9"/>
+            <circle cx="100" cy="100" r="6" fill="#e8ace1" opacity="0.8"/>
+            <!-- Espinas de estrella alrededor -->
+            <g fill="#c9a96e" opacity="0.7">
+              <circle cx="100" cy="30" r="1.5"/>
+              <circle cx="155" cy="60" r="1"/>
+              <circle cx="175" cy="110" r="1.2"/>
+              <circle cx="165" cy="160" r="1"/>
+              <circle cx="100" cy="180" r="1.5"/>
+              <circle cx="35" cy="160" r="1"/>
+              <circle cx="25" cy="110" r="1.2"/>
+              <circle cx="45" cy="60" r="1"/>
+              <circle cx="68" cy="40" r="1"/>
+              <circle cx="132" cy="40" r="1"/>
+            </g>
+          </svg>
+        </div>
+
+        <p>quizás sentir esto (<em>amor</em>) sea un error del ser humano, pero si es así, eres el único error que cometería.</p>
+
+        <p>Feliz. Eres como esa adicción que no se puede dejar, esa tranquilidad que se siente al fumar en un lugar en calma.</p>
+
+        <p>Tal vez no entiendas del todo mi forma de querer, pero me fascina expresarlo. <strong>No eres alguien desechable, ni una simple persona. Eres mucho más que eso.</strong></p>
+
+        <p>Quiero y me gusta cada parte de ti. Quiero tus ojos, tus locuras, tu hermoso y maravilloso cuerpo... y podría pasarme horas enteras admirando cada detalle tuyo.</p>
+
+        <p>He cometido mil cagadas en mi vida de las que me arrepiento, pero <strong>tú no estás en esa lista</strong>.</p>
+
+        <p>Cada vez que estoy a tu lado no solo quiero abrazarte... quiero más que eso. Quiero recostarme en ti y tú en mí, hablar, tomarnos fotos, fastidiarte, morderte tus labios carnosos (porque sí), y sentir que <strong>nadie puede arruinar ese momento</strong>.</p>
+
+        <p>Y tu alrededor siempre está lleno de luz... pero si esa luz algún día se apagara, te buscaría hasta en la oscuridad más profunda.</p>
+
+        <div class="verso">
+          Lo que siento por ti es un deseo real,<br>
+          pero no hablo de algo vulgar o puramente carnoso...<br>
+          hablo de una conexión de verdad,<br>
+          de respeto y de un sentimiento sincero<br>
+          que me sale desde el fondo del corazón.
+        </div>
+
+        <p>Toma esto como quieras: como una carta, o una confesión.</p>
+
+        <p>La verdad es que no sé cómo sacarte de mi mente... y tampoco quiero hacerlo.</p>
+
+        <p>No tengo claro qué somos, ni qué seremos... y eso a veces me tiene mal.</p>
+
+        <p>Pero yo sé lo que siento, y reconozco mis propios secretos y sentimientos.</p>
+
+        <p class="destacado">Sólo diré que, si quererte así es perder la cabeza... prefiero perderme contigo a seguir cuerdo sin ti.</p>
+      </div>
+
+      <div class="carta-footer">
+        <div class="firma">✧ contigo, siempre ✧</div>
+        <div class="corazon">♥</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DIBUJOS GÓTICOS FLOTANTES DE FONDO (watermarks) -->
+<!-- Arco gótico superior derecho -->
+<svg class="gothic-watermark top-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: 15deg;">
+  <path d="M10 100 L10 40 Q50 5, 90 40 L90 100" fill="none" stroke="#c9a96e" stroke-width="1"/>
+  <circle cx="50" cy="35" r="3" fill="#e8ace1" opacity="0.6"/>
+  <path d="M30 100 L30 55 Q50 40, 70 55 L70 100" fill="none" stroke="#7ab8d4" stroke-width="0.5" opacity="0.5"/>
+</svg>
+
+<!-- Rosa gótica inferior izquierda -->
+<svg class="gothic-watermark bottom-left" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: -10deg;">
+  <g fill="none" stroke="#e8ace1" stroke-width="0.6">
+    <path d="M50 20 C 45 35, 30 45, 35 60 C 30 70, 35 80, 50 75 C 65 80, 70 70, 65 60 C 70 45, 55 35, 50 20 Z"/>
+    <path d="M50 20 C 60 30, 70 45, 65 60 C 70 68, 62 75, 55 70 C 48 75, 40 68, 45 60 C 40 45, 50 30, 50 20 Z" opacity="0.5"/>
+    <circle cx="50" cy="55" r="4" fill="#c9a96e" opacity="0.4"/>
+  </g>
+</svg>
+
+<!-- Calavera gótica inferior derecha -->
+<svg class="gothic-watermark bottom-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: 25deg;">
+  <g fill="none" stroke="#7ab8d4" stroke-width="0.8" opacity="0.7">
+    <!-- cráneo -->
+    <circle cx="50" cy="45" r="22" />
+    <!-- ojillos -->
+    <circle cx="40" cy="42" r="4" />
+    <circle cx="60" cy="42" r="4" />
+    <!-- nariz -->
+    <path d="M50 48 L47 55 L53 55 Z" />
+    <!-- boca -->
+    <path d="M40 60 Q50 66, 60 60" stroke-width="1"/>
+    <!-- cejas góticas -->
+    <path d="M35 35 L45 33" stroke-width="0.5"/>
+    <path d="M55 33 L65 35" stroke-width="0.5"/>
+  </g>
+  <g fill="#c9a96e" opacity="0.5">
+    <circle cx="20" cy="20" r="1"/>
+    <circle cx="80" cy="15" r="1"/>
+    <circle cx="85" cy="80" r="1"/>
+    <circle cx="15" cy="80" r="1"/>
+  </g>
+</svg>
+
+<!-- Audio de fondo oculto -->
+<audio id="bgMusic" loop autoplay>
+  <source src="https://www.youtube.com/watch?v=oDNrAEY4guY" type="audio/mp4">
+</audio>
+
+<script>
+(function() {
+  // Reproducir música al entrar
+  document.addEventListener('DOMContentLoaded', function() {
+    var audio = document.getElementById('bgMusic');
+    if (audio) {
+      // Los videos de YouTube no se pueden reproducir directamente con la etiqueta audio,
+      // así que usamos un iframe de YouTube invisible con autoplay.
+      var iframe = document.createElement('iframe');
+      iframe.width = '0';
+      iframe.height = '0';
+      iframe.frameBorder = '0';
+      iframe.allow = 'autoplay; encrypted-media';
+      iframe.allowFullscreen = true;
+      iframe.src = 'https://www.youtube.com/embed/oDNrAEY4guY?autoplay=1&mute=0&controls=0&loop=1&playlist=oDNrAEY4guY&modestbranding=1&showinfo=0&rel=0';
+      iframe.style.position = 'absolute';
+      iframe.style.bottom = '0';
+      iframe.style.right = '0';
+      iframe.style.width = '0';
+      iframe.style.height = '0';
+      iframe.style.border = 'none';
+      iframe.style.overflow = 'hidden';
+      document.body.appendChild(iframe);
+    }
+  });
+
+  // Transición de intro a carta al hacer click
+  var enterBtn = document.getElementById('enterBtn');
+  var introOverlay = document.getElementById('introOverlay');
+  var cartaContainer = document.getElementById('cartaContainer');
+
+  if (enterBtn && introOverlay && cartaContainer) {
+    enterBtn.addEventListener('click', function() {
+      introOverlay.classList.add('hidden');
+      setTimeout(function() {
+        cartaContainer.classList.add('visible');
+      }, 1500);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
