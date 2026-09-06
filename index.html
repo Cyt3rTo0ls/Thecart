@@ -3,57 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>✉ Para María ✉</title>
+<title>✉ Thecart — Para María</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --rosa: #e8ace1;
-  --rosa-oscuro: #b85a8a;
-  --azul-oscuro: #1a1c3a;
-  --azul-oscuro-2: #252853;
-  --azul-claro: #7ab8d4;
-  --oro-antiguo: #c9a96e;
-  --negro-tepsoro: #0d0d15;
+  --rosa-suave: #c98ab5;
+  --rosa-oscuro: #8a3a6b;
+  --rosa-muerto: #5c1f3f;
+  --azul-oscuro: #1b1f40;
+  --azul-abismo: #0f1333;
+  --azul-aciento: #3d4f8c;
+  --dorado-tiento: #a87b3a;
+  --dorado-suave: #c4a35a;
+  --negro-sangre: #08050a;
+  --plomo-frizz: #2a2a35;
+  --marfil-murio: #6b5d5a;
 }
 
 body {
-  background: var(--negro-tepsoro);
-  color: var(--rosa);
-  font-family: 'Playfair Display', serif;
+  background: var(--negro-sangre);
+  color: var(--rosa-suave);
+  font-family: 'Cormorant Garamond', serif;
   overflow-x: hidden;
   min-height: 100vh;
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(122, 184, 212, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 50%, rgba(232, 172, 225, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 0%, rgba(201, 169, 110, 0.05) 0%, transparent 40%);
+    radial-gradient(ellipse 120% 80% at 20% 30%, rgba(138, 58, 107, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 70% at 80% 40%, rgba(61, 79, 140, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 50% at 50% 10%, rgba(168, 123, 58, 0.04) 0%, transparent 50%);
 }
 
-/* Fondo de estrellas llenas de polvo */
 body::before {
   content: '';
   position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
+  inset: 0;
   background-image:
-    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1.5px 1.5px at 50% 10%, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1.5px 1.5px at 15% 85%, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.5), transparent);
-  background-size: 200px 200px;
+    radial-gradient(1.5px 1.5px at 12% 15%, rgba(196,163,90,0.7), transparent),
+    radial-gradient(1px 1px at 28% 42%, rgba(196,163,90,0.4), transparent),
+    radial-gradient(2px 2px at 45% 8%, rgba(201,138,181,0.6), transparent),
+    radial-gradient(1px 1px at 62% 55%, rgba(196,163,90,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 78% 22%, rgba(61,79,140,0.6), transparent),
+    radial-gradient(1px 1px at 92% 68%, rgba(201,138,181,0.4), transparent),
+    radial-gradient(1px 1px at 5% 80%, rgba(196,163,90,0.4), transparent),
+    radial-gradient(1.5px 1.5px at 35% 90%, rgba(201,138,181,0.5), transparent),
+    radial-gradient(1px 1px at 68% 92%, rgba(61,79,140,0.3), transparent),
+    radial-gradient(1px 1px at 88% 12%, rgba(196,163,90,0.5), transparent),
+    radial-gradient(2px 2px at 18% 73%, rgba(201,138,181,0.4), transparent),
+    radial-gradient(1px 1px at 52% 35%, rgba(196,163,90,0.3), transparent);
+  background-size: 280px 280px;
   pointer-events: none;
   z-index: 0;
-  animation: twinkle 8s ease-in-out infinite alternate;
+  animation: estrellas-respiran 10s ease-in-out infinite alternate;
 }
 
-@keyframes twinkle {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.9; }
+@keyframes estrellas-respiran {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.85; }
 }
 
 .wrapper {
@@ -63,20 +70,21 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 16px;
 }
 
-/* --- CAPA DE ENTRADA CON TAPIZ --- */
+/* ============ CAPA DE ENTRADA — TAPIZ DE AMOR OSCURO ============ */
 .intro-overlay {
   position: fixed;
   inset: 0;
-  background: var(--negro-tepsoro);
+  background: var(--negro-sangre);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  transition: opacity 1.8s ease, visibility 1.8s ease;
+  transition: opacity 2s ease, visibility 2s ease;
+  padding: 20px;
 }
 
 .intro-overlay.hidden {
@@ -85,122 +93,168 @@ body::before {
   pointer-events: none;
 }
 
-.corona-rosas {
+/* Fondo gótico del tapiz: tela con rayado gótico */
+.tapiz-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(168,123,58,0.015) 2px,
+      rgba(168,123,58,0.015) 3px
+    ),
+    radial-gradient(circle at 50% 50%, rgba(138,58,107,0.2) 0%, transparent 60%);
+  opacity: 0.9;
+}
+
+.tapiz-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+/* Corona de amor oscuro — dos anillos rosado/azul que giran */
+.ama-dos-anillos {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  animation: anillo-gira 12s linear infinite;
+}
+
+.anillo-rosa {
   position: absolute;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 30%, rgba(232,172,225,0.35), rgba(232,172,225,0) 70%);
-  animation: breathe-rosa 4s ease-in-out infinite;
+  border: 2px solid var(--rosa-suave);
+  opacity: 0.6;
+  top: 30px; left: 30px;
+  box-shadow: 0 0 40px rgba(201,138,181,0.2), inset 0 0 40px rgba(201,138,181,0.1);
 }
 
-.corona-azul {
+.anillo-azul {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 30%, rgba(122,184,212,0.3), rgba(122,184,212,0) 70%);
-  animation: breathe-azul 5s ease-in-out infinite 0.5s;
+  border: 2px solid var(--azul-aciento);
+  opacity: 0.5;
+  top: 45px; left: 45px;
+  box-shadow: 0 0 30px rgba(61,79,140,0.2), inset 0 0 30px rgba(61,79,140,0.1);
 }
 
-.corona-gold {
+.coro-dorado-chico {
   position: absolute;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 30%, rgba(201,169,110,0.25), rgba(201,169,110,0) 70%);
-  animation: breathe-gold 6s ease-in-out infinite 1s;
+  border: 1px solid var(--dorado-suave);
+  top: 90px; left: 90px;
+  opacity: 0.8;
+  box-shadow: 0 0 20px rgba(196,163,90,0.3);
 }
 
-@keyframes breathe-rosa {
-  0%, 100% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.3); opacity: 1; }
-}
-@keyframes breathe-azul {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.4); opacity: 1; }
-}
-@keyframes breathe-gold {
-  0%, 100% { transform: scale(1); opacity: 0.4; }
-  50% { transform: scale(1.2); opacity: 0.9; }
+@keyframes anillo-gira {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.08); }
+  100% { transform: rotate(360deg) scale(1); }
 }
 
-.intro-title {
+/* Gloria detrás del título — mancha rosada/azul degradada */
+.gloria-rosa-azul {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%,
+    rgba(138,58,107,0.25),
+    rgba(61,79,140,0.15),
+    rgba(138,58,107,0.05) 60%,
+    transparent 80%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: gloria-pulmon 6s ease-in-out infinite alternate;
+}
+
+@keyframes gloria-pulmon {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+.intro-titulo {
   font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(24px, 6vw, 48px);
-  color: var(--oro-antiguo);
+  font-size: clamp(18px, 5vw, 34px);
+  color: var(--dorado-suave);
   text-align: center;
   letter-spacing: 6px;
   text-shadow:
-    0 0 10px rgba(201,169,110,0.6),
-    0 0 30px rgba(201,169,110,0.3);
-  margin-bottom: 30px;
-  animation: fadeUp 2s ease forwards;
+    0 0 8px rgba(196,163,90,0.4),
+    0 0 20px rgba(168,123,58,0.3),
+    0 0 40px rgba(138,58,107,0.1);
+  margin-top: 10px;
+  margin-bottom: 12px;
+  animation: aparece 2s ease forwards;
 }
 
-.intro-subtitle {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
+.intro-sub {
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(14px, 3vw, 20px);
-  color: var(--azul-claro);
+  font-style: italic;
+  color: var(--azul-aciento);
   text-align: center;
   letter-spacing: 3px;
-  margin-bottom: 40px;
-  animation: fadeUp 2s ease 0.4s forwards;
   opacity: 0;
+  animation: aparece 2s ease 0.3s forwards;
+  text-shadow: 0 0 10px rgba(61,79,140,0.3);
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+.intro-boton {
+  font-family: 'Cinzel Decorative', serif;
+  background: linear-gradient(145deg, rgba(30,20,40,0.9), rgba(20,10,25,0.95));
+  color: var(--rosa-suave);
+  border: 1px solid var(--dorado-tiento);
+  padding: 12px 34px;
+  font-size: clamp(12px, 2.5vw, 16px);
+  letter-spacing: 4px;
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  opacity: 0;
+  animation: aparece 2s ease 0.6s forwards;
+  box-shadow:
+    0 0 10px rgba(168,123,58,0.15),
+    inset 0 0 8px rgba(0,0,0,0.6);
+}
+
+.intro-boton:hover {
+  background: linear-gradient(145deg, rgba(30,20,40,0.98), rgba(20,10,25,1));
+  border-color: var(--dorado-suave);
+  box-shadow:
+    0 0 25px rgba(168,123,58,0.4),
+    0 0 50px rgba(138,58,107,0.15),
+    inset 0 0 12px rgba(0,0,0,0.7);
+  transform: scale(1.02);
+  color: var(--dorado-suave);
+}
+
+@keyframes aparece {
+  from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.intro-enter-btn {
-  font-family: 'Cinzel Decorative', serif;
-  background: linear-gradient(135deg, var(--rosa-oscuro), var(--azul-oscuro));
-  color: #fff;
-  border: 1px solid var(--oro-antiguo);
-  padding: 14px 40px;
-  font-size: clamp(14px, 3vw, 18px);
-  letter-spacing: 4px;
-  cursor: pointer;
-  border-radius: 4px;
-  text-transform: uppercase;
-  transition: all 0.4s;
-  box-shadow:
-    0 0 15px rgba(201,169,110,0.2),
-    inset 0 0 10px rgba(0,0,0,0.4);
-  animation: fadeUp 2s ease 0.8s forwards;
-  opacity: 0;
-}
-
-.intro-enter-btn:hover {
-  background: linear-gradient(135deg, var(--azul-oscuro), var(--rosa-oscuro));
-  box-shadow:
-    0 0 25px rgba(201,169,110,0.5),
-    inset 0 0 15px rgba(0,0,0,0.5);
-  transform: scale(1.03);
-}
-
-/* --- DIBUJOS GÓTICOS SVG EN LA CAPA DE ENTRADA --- */
-.gothic-svg-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.15;
-}
-
-/* --- EL CUERPO DE LA CARTA --- */
+/* ============ CARTA — Papel de amor oscuro ============ */
 .carta-container {
   width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 0;
+  max-width: 560px;
+  margin: 16px auto;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1.4s ease, transform 1.4s ease;
+  transform: translateY(25px);
+  transition: opacity 1.6s ease, transform 1.6s ease;
 }
 
 .carta-container.visible {
@@ -208,517 +262,681 @@ body::before {
   transform: translateY(0);
 }
 
-/* Marco de la carta estilo pergamino gótico */
 .carta-marca {
   position: relative;
-  border: 1px solid var(--oro-antiguo);
   background:
-    linear-gradient(135deg, rgba(37,40,83,0.9), rgba(13,13,21,0.95));
-  padding: 0;
+    linear-gradient(155deg, rgba(15,19,51,0.96), rgba(8,5,10,0.98));
+  border: 1px solid rgba(168,123,58,0.5);
   box-shadow:
-    0 0 30px rgba(201,169,110,0.15),
-    0 0 60px rgba(37,40,83,0.4),
-    inset 0 0 80px rgba(0,0,0,0.5);
+    0 0 30px rgba(168,123,58,0.12),
+    0 10px 50px rgba(0,0,0,0.7),
+    inset 0 0 70px rgba(0,0,0,0.6);
   overflow: hidden;
+  padding: 0;
 }
 
 .carta-marca::before {
   content: '';
   position: absolute;
-  top: -1px; left: -1px; right: -1px; bottom: -1px;
-  border: 1px solid rgba(201,169,110,0.3);
+  inset: 3px;
+  border: 1px solid rgba(168,123,58,0.15);
   pointer-events: none;
 }
 
 .carta-marca::after {
   content: '';
   position: absolute;
-  inset: 4px;
-  border: 1px solid rgba(122,184,212,0.15);
+  inset: 6px;
+  border: 1px solid rgba(61,79,140,0.12);
   pointer-events: none;
 }
 
-/* Decoración de esquinas góticas */
-.carta-marca .corner {
+/* Esquinas góticas de amor — cadenas adornadas */
+.esquina {
   position: absolute;
-  width: 60px;
-  height: 60px;
-  border-color: var(--oro-antiguo);
+  width: 50px;
+  height: 50px;
+  border-color: var(--dorado-tiento);
   border-style: solid;
+  opacity: 0.6;
+}
+.esquina-tl { top: 6px; left: 6px; border-width: 2px 0 0 2px; }
+.esquina-tr { top: 6px; right: 6px; border-width: 2px 2px 0 0; }
+.esquina-bl { bottom: 6px; left: 6px; border-width: 0 0 2px 2px; }
+.esquina-br { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; }
+
+/* Cadenas decorativas en las esquinas */
+.esquina::after {
+  content: '⛓️';
+  position: absolute;
+  font-size: 10px;
+  bottom: -6px;
+  right: -6px;
   opacity: 0.5;
 }
-.carta-marca .corner-tl { top: 8px; left: 8px;
-  border-width: 2px 0 0 2px; }
-.carta-marca .corner-tr { top: 8px; right: 8px;
-  border-width: 2px 2px 0 0; }
-.carta-marca .corner-bl { bottom: 8px; left: 8px;
-  border-width: 0 0 2px 2px; }
-.carta-marca .corner-br { bottom: 8px; right: 8px;
-  border-width: 0 2px 2px 0; }
+
+.esquina-tr::after { content: '⛓️'; bottom: auto; top: -6px; right: -6px; }
+.esquina-bl::after { content: '⛓️'; bottom: -6px; left: -6px; }
 
 .carta-header {
   text-align: center;
-  padding: 30px 20px 15px;
+  padding: 22px 18px 14px;
   background: linear-gradient(180deg,
-    rgba(201,169,110,0.1),
-    transparent 60%);
-  border-bottom: 1px solid rgba(201,169,110,0.3);
+    rgba(168,123,58,0.1),
+    transparent 70%);
+  border-bottom: 1px solid rgba(168,123,58,0.3);
   position: relative;
 }
 
-.carta-header .pluma-divider {
-  width: 80px;
+.carta-header .raya {
+  width: 60px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--oro-antiguo), transparent);
-  margin: 15px auto;
+  background: linear-gradient(90deg, transparent, var(--dorado-tiento), transparent);
+  margin: 10px auto;
 }
 
 .carta-header h1 {
   font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(20px, 5vw, 32px);
-  color: var(--oro-antiguo);
-  letter-spacing: 5px;
-  text-shadow: 0 0 10px rgba(201,169,110,0.3);
+  font-size: clamp(16px, 4vw, 26px);
+  color: var(--dorado-suave);
+  letter-spacing: 4px;
+  text-shadow: 0 0 8px rgba(196,163,90,0.2);
 }
 
 .carta-header .fecha {
   font-style: italic;
-  color: var(--azul-claro);
-  font-size: clamp(12px, 2.5vw, 15px);
-  margin-top: 8px;
-  opacity: 0.7;
+  color: var(--azul-aciento);
+  font-size: clamp(11px, 2vw, 14px);
+  margin-top: 6px;
+  opacity: 0.65;
 }
 
-/* Contenido del cuerpo — texto */
+/* Contenido */
 .carta-body {
-  padding: 25px 20px;
-  font-size: clamp(14px, 3.2vw, 17px);
-  line-height: 1.8;
-  color: var(--rosa);
+  padding: 20px 18px 15px;
+  font-size: clamp(14px, 3vw, 17px);
+  line-height: 1.85;
+  color: var(--rosa-suave);
 }
 
 .carta-body p {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: lee 0.9s ease forwards;
+}
+
+.carta-body p.n1 { animation-delay: 0.1s; }
+.carta-body p.n2 { animation-delay: 0.25s; }
+.carta-body p.n3 { animation-delay: 0.4s; }
+.carta-body p.n4 { animation-delay: 0.55s; }
+.carta-body p.n5 { animation-delay: 0.7s; }
+.carta-body p.n6 { animation-delay: 0.85s; }
+.carta-body p.n7 { animation-delay: 1.0s; }
+.carta-body p.n8 { animation-delay: 1.15s; }
+.carta-body p.n9 { animation-delay: 1.3s; }
+.carta-body p.n10 { animation-delay: 1.45s; }
+.carta-body p.n11 { animation-delay: 1.6s; }
+.carta-body p.n12 { animation-delay: 1.75s; }
+.carta-body p.n13 { animation-delay: 1.9s; }
+.carta-body p.n14 { animation-delay: 2.0s; }
+
+@keyframes lee {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .carta-body .destacado {
-  color: var(--oro-antigudo);
+  color: var(--dorado-suave);
   font-style: italic;
-  border-left: 2px solid var(--oro-antiguo);
-  padding-left: 15px;
-  margin: 20px 0;
+  border-left: 2px solid var(--dorado-tiento);
+  padding-left: 14px;
+  margin: 18px 0;
+  text-shadow: 0 0 6px rgba(196,163,90,0.15);
 }
 
-/* Insertar imagen de loto SVG */
-.loto-divider {
+.carta-body em { color: var(--azul-aciento); }
+
+/* Flor de lencería gótica de amor — dibujo SVG */
+.loto-lencerio-divider {
   text-align: center;
-  margin: 25px 0;
-  padding: 15px 0;
+  margin: 22px 0;
+  padding: 10px 0;
   position: relative;
 }
 
-.loto-divider svg {
-  width: clamp(120px, 25vw, 180px);
+.loto-lencerio-divider svg {
+  width: clamp(110px, 22vw, 160px);
   height: auto;
-  filter: drop-shadow(0 0 8px rgba(232,172,225,0.3));
-  animation: float-loto 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(201,138,181,0.25));
+  animation: flota-loto 5s ease-in-out infinite;
 }
 
-@keyframes float-loto {
+@keyframes flota-loto {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-6px); }
 }
 
-.loto-divider::before,
-.loto-divider::after {
+.loto-lencerio-divider::before,
+.loto-lencerio-divider::after {
   content: '';
   display: inline-block;
-  width: 40px;
+  width: 30px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--azul-claro), transparent);
+  background: linear-gradient(90deg, transparent, var(--azul-aciento), transparent);
   vertical-align: middle;
-  margin: 0 15px;
+  margin: 0 12px;
 }
 
-/* Cita / verso destacado */
+/* Verso — recuadro de amor oscuro */
 .verso {
   text-align: center;
   font-style: italic;
-  color: var(--azul-claro);
-  padding: 20px;
-  margin: 20px 0;
-  border-top: 1px solid rgba(122,184,212,0.3);
-  border-bottom: 1px solid rgba(122,184,212,0.3);
+  color: var(--azul-aciento);
+  padding: 15px;
+  margin: 18px 0;
+  border-top: 1px solid rgba(61,79,140,0.3);
+  border-bottom: 1px solid rgba(61,79,140,0.3);
   position: relative;
+  background: rgba(15,19,51,0.4);
 }
 
 .verso::before {
-  content: '❝';
-  font-size: 24px;
-  color: var(--oro-antigudo);
+  content: '✦';
+  font-size: 16px;
+  color: var(--dorado-tiento);
   position: absolute;
-  top: -10px;
-  left: 10px;
+  top: -8px;
+  left: 12px;
 }
 
 .verso::after {
-  content: '❞';
-  font-size: 24px;
-  color: var(--oro-antigudo);
+  content: '✦';
+  font-size: 16px;
+  color: var(--dorado-tiento);
   position: absolute;
-  bottom: -15px;
-  right: 10px;
+  bottom: -12px;
+  right: 12px;
 }
 
-/* Firma final */
+/* Firma */
 .carta-footer {
   text-align: center;
-  padding: 15px 20px 30px;
-  border-top: 1px solid rgba(201,169,110,0.2);
-  margin-top: 10px;
+  padding: 12px 18px 25px;
+  border-top: 1px solid rgba(168,123,58,0.2);
+  margin-top: 8px;
   background: linear-gradient(0deg,
-    rgba(201,169,110,0.08),
-    transparent 60%);
+    rgba(168,123,58,0.08),
+    transparent 50%);
 }
 
 .carta-footer .firma {
   font-family: 'Cinzel Decorative', serif;
-  color: var(--oro-antigudo);
-  font-size: clamp(16px, 4vw, 24px);
+  color: var(--dorado-suave);
+  font-size: clamp(14px, 3.5vw, 20px);
   letter-spacing: 3px;
-  text-shadow: 0 0 8px rgba(201,169,110,0.3);
-  margin-top: 10px;
+  text-shadow: 0 0 8px rgba(196,163,90,0.2);
+  margin-top: 8px;
 }
 
-.carta-footer .corazon {
+.carta-footer .corazon-gotico {
   display: inline-block;
-  font-size: clamp(18px, 4vw, 26px);
-  animation: heartbeat 1.5s ease-in-out infinite;
+  font-size: clamp(16px, 3.5vw, 22px);
+  animation: corazon-late 1.6s ease-in-out infinite;
   color: var(--rosa-oscuro);
+  filter: drop-shadow(0 0 6px rgba(201,138,181,0.3));
 }
 
-@keyframes heartbeat {
+@keyframes corazon-late {
   0%, 100% { transform: scale(1); }
-  15% { transform: scale(1.2); }
-  30% { transform: scale(1); }
-  45% { transform: scale(1.15); }
-  60% { transform: scale(1); }
+  14% { transform: scale(1.2); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.12); }
+  56% { transform: scale(1); }
 }
 
-/* --- DIBUJOS GÓTICOS LATERALES FLOTANTES --- */
-.gothic-watermark {
+/* ============ DIBUJOS GÓTICOS DE AMOR FLOTANTES ============ */
+.gotico-watermark {
   position: fixed;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.07;
-  animation: drift-gothic 20s linear infinite;
+  opacity: 0.06;
+  animation: deriva-gotica 22s linear infinite;
 }
 
-.gothic-watermark.top-right {
-  top: 5%;
-  right: 0;
-  width: 120px;
-  transform: rotate(15deg);
+.gotico-watermark.tr {
+  top: 4%; right: 2%;
+  width: 110px;
+  transform: rotate(12deg);
 }
 
-.gothic-watermark.bottom-left {
-  bottom: 5%;
-  left: 0;
-  width: 100px;
-  transform: rotate(-10deg);
+.gotico-watermark.bl {
+  bottom: 4%; left: 2%;
+  width: 95px;
+  transform: rotate(-8deg);
 }
 
-.gothic-watermark.bottom-right {
-  bottom: 10%;
-  right: 0;
-  width: 80px;
-  transform: rotate(25deg);
+.gotico-watermark.br {
+  bottom: 8%; right: 2%;
+  width: 75px;
+  transform: rotate(22deg);
 }
 
-@keyframes drift-gothic {
-  0% { opacity: 0.07; transform: translateY(0) rotate(var(--r, 0deg)); }
-  50% { opacity: 0.12; }
-  100% { opacity: 0.07; transform: translateY(-40px) rotate(var(--r, 0deg)); }
+@keyframes deriva-gotica {
+  0% { opacity: 0.06; transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { opacity: 0.1; }
+  100% { opacity: 0.06; transform: translateY(-35px) rotate(var(--r, 0deg)); }
 }
 
-/* --- SCROLLBAR personalizada --- */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--negro-tepsoro); }
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--negro-sangre); }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--rosa-oscuro), var(--azul-claro));
-  border-radius: 3px;
+  background: linear-gradient(var(--rosa-oscuro), var(--azul-aciento));
+  border-radius: 2px;
 }
 
-/* --- SELECT --- */
-::selection {
-  background: var(--rosa-oscuro);
-  color: var(--negro-tepsoro);
-}
+::selection { background: var(--rosa-muerto); color: var(--negro-sangre); }
 
-/* Responsive móvil */
+/* Responsive */
 @media (max-width: 480px) {
-  .carta-body { padding: 18px 15px; }
-  .carta-marca .corner { width: 40px; height: 40px; }
-  .corner-tl { top: 5px; left: 5px; }
-  .corner-tr { top: 5px; right: 5px; }
-  .corner-bl { bottom: 5px; left: 5px; }
-  .corner-br { bottom: 5px; right: 5px; }
+  .carta-body { padding: 16px 14px; }
+  .esquina { width: 35px; height: 35px; }
+  .esquina-tl { top: 4px; left: 4px; }
+  .esquina-tr { top: 4px; right: 4px; }
+  .esquina-bl { bottom: 4px; left: 4px; }
+  .esquina-br { bottom: 4px; right: 4px; }
+  .esquina::after { font-size: 8px; }
 }
 
-/* Fade-in de elementos al hacer scroll (simple) */
-.carta-body p { opacity: 0; transform: translateY(10px); animation: fadeInUp 0.8s ease forwards; }
-.carta-body p:nth-child(1) { animation-delay: 0.2s; }
-.carta-body p:nth-child(2) { animation-delay: 0.4s; }
-.carta-body p:nth-child(3) { animation-delay: 0.6s; }
-.carta-body p:nth-child(4) { animation-delay: 0.8s; }
-.carta-body p:nth-child(5) { animation-delay: 1.0s; }
-.carta-body p:nth-child(6) { animation-delay: 1.2s; }
-.carta-body p:nth-child(7) { animation-delay: 1.4s; }
-.carta-body p:nth-child(8) { animation-delay: 1.6s; }
-.carta-body p:nth-child(9) { animation-delay: 1.8s; }
-.carta-body p:nth-child(10) { animation-delay: 2.0s; }
-
-@keyframes fadeInUp {
-  to { opacity: 1; transform: translateY(0); }
+/* Sombras suaves en párrafos */
+.carta-body p:first-child {
+  font-weight: 600;
+  color: var(--dorado-suave);
+  text-shadow: 0 0 4px rgba(196,163,90,0.2);
 }
 
 </style>
 </head>
 <body>
 
-<!-- CAPA DE ENTRADA (intro) -->
+<!-- ============ CAPA DE ENTRADA ============ -->
 <div class="intro-overlay" id="introOverlay">
-  <div class="corona-rosas"></div>
-  <div class="corona-azul"></div>
-  <div class="corona-gold"></div>
+  <div class="tapiz-bg"></div>
 
-  <!-- Dibujo gótico floreado de fondo en SVG -->
-  <svg class="gothic-svg-bg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="glow-bg" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#c9a96e" stop-opacity="0.4"/>
-        <stop offset="100%" stop-color="#c9a96e" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-    <circle cx="200" cy="200" r="180" fill="url(#glow-bg)"/>
-    <!-- Rosa gótica -->
-    <g fill="none" stroke="#e8ace1" stroke-width="0.6" opacity="0.6">
-      <path d="M200 40 C 200 40, 230 80, 250 100 C 270 80, 300 55, 300 80 C 320 80, 330 120, 310 160 C 340 200, 310 240, 270 240 C 260 260, 250 280, 230 280 C 220 300, 200 310, 200 310 C 200 310, 180 300, 170 280 C 150 280, 140 260, 130 240 C 90 240, 60 200, 90 160 C 70 120, 80 80, 100 80 C 100 55, 130 80, 150 100 C 170 80, 200 40, 200 40 Z"/>
+  <!-- Decoración gótica del tapiz: cadenas, espinas, corazón partido -->
+  <svg class="tapiz-decor" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Cadena decorativa del borde -->
+    <g fill="none" stroke="#a87b3a" stroke-width="0.7" opacity="0.6">
+      <path d="M30 40 L30 360"/>
+      <path d="M370 40 L370 360"/>
+      <path d="M40 30 L360 30"/>
+      <path d="M40 370 L360 370"/>
+      <circle cx="30" cy="30" r="3" fill="#a87b3a"/>
+      <circle cx="370" cy="30" r="3" fill="#a87b3a"/>
+      <circle cx="30" cy="370" r="3" fill="#a87b3a"/>
+      <circle cx="370" cy="370" r="3" fill="#a87b3a"/>
     </g>
-    <!-- Arco gótico -->
-    <g fill="none" stroke="#7ab8d4" stroke-width="0.8" opacity="0.5">
-      <path d="M80 340 L80 160 C 80 100, 200 60, 320 160 L320 340"/>
-      <path d="M100 340 L100 180 C 100 130, 200 100, 300 180 L300 340" opacity="0.4"/>
-      <circle cx="200" cy="120" r="3" fill="#c9a96e"/>
+    <!-- Espinas de amor gótico -->
+    <g fill="none" stroke="#8a3a6b" stroke-width="0.6" opacity="0.5">
+      <path d="M200 40 C 200 40, 230 80, 260 120 C 290 100, 320 80, 330 100 C 345 110, 350 130, 330 150 C 350 180, 340 210, 310 220 C 320 250, 300 270, 280 260 C 260 270, 240 280, 220 270 C 200 280, 200 220, 200 220 C 200 220, 200 280, 200 280 C 200 280, 200 220, 200 220 C 180 270, 160 280, 140 270 C 120 280, 100 270, 110 260 C 90 270, 70 250, 80 220 C 50 210, 40 180, 60 150 C 40 130, 45 110, 60 100 C 70 80, 100 100, 130 120 C 160 80, 200 40, 200 40 Z"/>
     </g>
-    <!-- Estrellas -->
-    <g fill="#fff">
-      <circle cx="50" cy="50" r="1" opacity="0.8"/>
-      <circle cx="350" cy="80" r="1.2" opacity="0.6"/>
-      <circle cx="370" cy="300" r="1" opacity="0.7"/>
-      <circle cx="30" cy="320" r="0.8" opacity="0.5"/>
-      <circle cx="200" cy="20" r="1.5" opacity="0.9"/>
+    <!-- Cadena decorativa interior -->
+    <g fill="none" stroke="#c4a35a" stroke-width="0.5" opacity="0.4">
+      <circle cx="200" cy="200" r="60"/>
+      <circle cx="200" cy="200" r="80" opacity="0.5"/>
+      <path d="M200 140 L200 260 M140 200 L260 200" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="4" fill="#c4a35a" opacity="0.7"/>
+    </g>
+    <!-- Estrellas espaciadas -->
+    <g fill="#c4a35a">
+      <circle cx="60" cy="60" r="1.2" opacity="0.8"/>
+      <circle cx="340" cy="70" r="1" opacity="0.6"/>
+      <circle cx="350" cy="320" r="1.2" opacity="0.7"/>
+      <circle cx="50" cy="330" r="1" opacity="0.5"/>
+      <circle cx="200" cy="15" r="1.5" opacity="0.9"/>
+      <circle cx="15" cy="200" r="1" opacity="0.6"/>
+      <circle cx="385" cy="200" r="1.2" opacity="0.7"/>
     </g>
   </svg>
 
-  <h1 class="intro-title">✉ Para María ✉</h1>
-  <p class="intro-subtitle">una carta bajo la luna</p>
+  <!-- Dos anillos rosado y azul girando (encuadre de amor) -->
+  <div class="ama-dos-anillos">
+    <div class="anillo-rosa"></div>
+    <div class="anillo-azul"></div>
+    <div class="coro-dorado-chico"></div>
+  </div>
 
-  <button class="intro-enter-btn" id="enterBtn">✧ Abrir la carta ✧</button>
+  <div class="gloria-rosa-azul"></div>
+
+  <h1 class="intro-titulo">✦ Thecart ✦</h1>
+  <p class="intro-sub">— carta de amor oscuro —</p>
+
+  <button class="intro-boton" id="enterBtn">✦ Abrir la carta ✦</button>
 </div>
 
-<!-- CUERPO DE LA CARTA -->
+<!-- ============ CUERPO DE LA CARTA ============ -->
 <div class="wrapper">
   <div class="carta-container" id="cartaContainer">
     <div class="carta-marca">
-      <!-- Esquinas decoradas -->
-      <div class="corner corner-tl"></div>
-      <div class="corner corner-tr"></div>
-      <div class="corner corner-bl"></div>
-      <div class="corner corner-br"></div>
+      <div class="esquina esquina-tl"></div>
+      <div class="esquina esquina-tr"></div>
+      <div class="esquina esquina-bl"></div>
+      <div class="esquina esquina-br"></div>
 
       <div class="carta-header">
-        <h1>✧ CARTA DE AMOR ✧</h1>
-        <div class="pluma-divider"></div>
-        <div class="fecha">bajo la luz de la luna, para ti</div>
+        <h1>✧ Thecart ✧</h1>
+        <div class="raya"></div>
+        <div class="fecha">una confesión de amor oscuro, para ti</div>
       </div>
 
       <div class="carta-body">
-        <p><strong>María...</strong></p>
+        <p class="n1"><strong>María...</strong></p>
 
-        <p>tal vez estemos locos o seamos raros, pero prefiero eso mil veces antes que ser el típico "hombre" que solo busca tener relaciones sexuales o algo efímero.</p>
+        <p class="n2">tal vez estemos locos o seamos raros, pero prefiero eso mil veces antes que ser el típico "hombre" que solo busca tener relaciones sexuales o algo efímero.</p>
 
-        <p>No sé hasta qué punto llegaré en esta vida, o en lo nuestro contigo... pero estoy <em>completamente seguro</em> de que quiero que te quedes a mi lado lo más que se pueda.</p>
+        <p class="n3">No sé hasta qué punto llegaré en esta vida, o en lo nuestro contigo... pero estoy <em>completamente seguro</em> de que quiero que te quedes a mi lado lo más que se pueda.</p>
 
-        <p>Más que el centro de mi universo, eres para mí como una <strong>flor de loto</strong>, una flor especial que quiero cuidar para que nunca se marchite.</p>
+        <p class="n4">Más que el centro de mi universo, eres para mí como una <strong>flor de loto</strong>, una flor especial que quiero cuidar para que nunca se marchite.</p>
 
-        <div class="loto-divider">
+        <!-- Flor de loto gótica de amor -->
+        <div class="loto-lencerio-divider">
           <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <radialGradient id="lotoGrad" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#e8ace1"/>
-                <stop offset="60%" stop-color="#b85a8a"/>
-                <stop offset="100%" stop-color="#7ab8d4"/>
+              <radialGradient id="lotoGradDark" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#c98ab5"/>
+                <stop offset="50%" stop-color="#8a3a6b"/>
+                <stop offset="100%" stop-color="#3d4f8c"/>
               </radialGradient>
+              <linearGradient id="petalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#c98ab5"/>
+                <stop offset="100%" stop-color="#5c1f3f"/>
+              </linearGradient>
             </defs>
-            <!-- Hojas de loto -->
-            <g fill="none" stroke="#7ab8d4" stroke-width="1" opacity="0.6">
-              <path d="M100 180 C 80 160, 40 130, 50 90 C 55 70, 80 60, 100 90" />
-              <path d="M100 180 C 120 160, 160 130, 150 90 C 145 70, 120 60, 100 90" />
-              <path d="M100 180 C 60 170, 20 150, 30 110 C 38 90, 70 85, 100 105" />
-              <path d="M100 180 C 140 170, 180 150, 170 110 C 162 90, 130 85, 100 105" />
+            <!-- Hojas inferiores -->
+            <g fill="none" stroke="#3d4f8c" stroke-width="1" opacity="0.7">
+              <path d="M100 185 C 80 165, 40 135, 45 95"/>
+              <path d="M100 185 C 120 165, 160 135, 155 95"/>
+              <path d="M100 185 C 60 175, 20 155, 25 115"/>
+              <path d="M100 185 C 140 175, 180 155, 175 115"/>
             </g>
-            <!-- Pétalos exteriores -->
-            <g fill="url(#lotoGrad)" opacity="0.85">
-              <path d="M100 50 C 95 70, 80 90, 85 110 C 80 120, 85 130, 100 125 C 115 130, 120 120, 115 110 C 120 90, 105 70, 100 50 Z"/>
-              <path d="M100 50 C 80 65, 55 80, 60 105 C 55 115, 65 125, 95 115 C 110 125, 135 115, 140 105 C 145 80, 120 65, 100 50 Z" opacity="0.6"/>
-              <path d="M100 55 C 125 70, 150 90, 140 115 C 145 120, 135 130, 115 120 C 100 130, 90 120, 95 110 C 80 90, 95 70, 100 55 Z" opacity="0.5"/>
+            <!-- Pétalos exteriores oscuros -->
+            <g fill="url(#petalGrad)" opacity="0.8">
+              <path d="M100 50 C 95 70, 78 92, 83 112 C 78 122, 85 132, 100 128 C 115 132, 122 122, 117 112 C 122 92, 105 70, 100 50 Z"/>
+              <path d="M100 50 C 78 65, 52 80, 56 105 C 52 115, 62 125, 95 115 C 108 125, 135 115, 140 105 C 145 80, 120 65, 100 50 Z" opacity="0.55"/>
+              <path d="M100 55 C 125 70, 150 90, 140 115 C 144 122, 135 130, 115 120 C 100 130, 90 122, 95 112 C 80 90, 95 70, 100 55 Z" opacity="0.45"/>
             </g>
-            <!-- Centro -->
-            <circle cx="100" cy="100" r="12" fill="#c9a96e" opacity="0.9"/>
-            <circle cx="100" cy="100" r="6" fill="#e8ace1" opacity="0.8"/>
-            <!-- Espinas de estrella alrededor -->
-            <g fill="#c9a96e" opacity="0.7">
-              <circle cx="100" cy="30" r="1.5"/>
-              <circle cx="155" cy="60" r="1"/>
-              <circle cx="175" cy="110" r="1.2"/>
-              <circle cx="165" cy="160" r="1"/>
+            <!-- Pétalos interiores rosados -->
+            <g fill="var(--rosa-suave)" opacity="0.6">
+              <path d="M100 70 C 88 82, 70 90, 75 105 C 68 108, 65 115, 80 115 C 95 115, 105 115, 110 108 C 115 95, 105 80, 100 70 Z"/>
+              <path d="M100 72 C 112 80, 130 88, 126 105 C 132 108, 135 115, 120 115 C 105 115, 95 115, 90 108 C 85 95, 98 80, 100 72 Z" opacity="0.5"/>
+            </g>
+            <!-- Centro dorado del loto -->
+            <circle cx="100" cy="100" r="10" fill="#a87b3a" opacity="0.85"/>
+            <circle cx="100" cy="100" r="5" fill="#c4a35a" opacity="0.9"/>
+            <circle cx="100" cy="100" r="2" fill="#e8d5a8" opacity="0.8"/>
+            <!-- Estrellas alrededor -->
+            <g fill="#c4a35a" opacity="0.6">
+              <circle cx="100" cy="28" r="1.5"/>
+              <circle cx="155" cy="55" r="1"/>
+              <circle cx="178" cy="105" r="1.2"/>
+              <circle cx="168" cy="155" r="1"/>
               <circle cx="100" cy="180" r="1.5"/>
-              <circle cx="35" cy="160" r="1"/>
-              <circle cx="25" cy="110" r="1.2"/>
-              <circle cx="45" cy="60" r="1"/>
-              <circle cx="68" cy="40" r="1"/>
-              <circle cx="132" cy="40" r="1"/>
+              <circle cx="32" cy="155" r="1"/>
+              <circle cx="22" cy="105" r="1.2"/>
+              <circle cx="32" cy="55" r="1"/>
+              <circle cx="65" cy="38" r="1"/>
+              <circle cx="135" cy="38" r="1"/>
+              <circle cx="75" cy="170" r="1"/>
+              <circle cx="125" cy="170" r="1"/>
+            </g>
+            <!-- Espinas góticas pequeñas en pétalos -->
+            <g fill="none" stroke="#a87b3a" stroke-width="0.4" opacity="0.5">
+              <path d="M100 60 L100 70"/>
+              <path d="M100 90 L100 100"/>
+              <path d="M100 110 L100 120"/>
+              <path d="M80 80 L90 90"/>
+              <path d="M120 80 L110 90"/>
+              <path d="M80 110 L90 100"/>
+              <path d="M120 110 L110 100"/>
             </g>
           </svg>
         </div>
 
-        <p>quizás sentir esto (<em>amor</em>) sea un error del ser humano, pero si es así, eres el único error que cometería.</p>
+        <p class="n5">quizás sentir esto (<em>amor</em>) sea un error del ser humano, pero si es así, eres el único error que cometería.</p>
 
-        <p>Feliz. Eres como esa adicción que no se puede dejar, esa tranquilidad que se siente al fumar en un lugar en calma.</p>
+        <p class="n6">Feliz. Eres como esa adicción que no se puede dejar, esa tranquilidad que se siente al fumar en un lugar en calma.</p>
 
-        <p>Tal vez no entiendas del todo mi forma de querer, pero me fascina expresarlo. <strong>No eres alguien desechable, ni una simple persona. Eres mucho más que eso.</strong></p>
+        <p class="n7">Tal vez no entiendas del todo mi forma de querer, pero me fascina expresarlo. <strong>No eres alguien desechable, ni una simple persona. Eres mucho más que eso.</strong></p>
 
-        <p>Quiero y me gusta cada parte de ti. Quiero tus ojos, tus locuras, tu hermoso y maravilloso cuerpo... y podría pasarme horas enteras admirando cada detalle tuyo.</p>
+        <p class="n8">Quiero y me gusta cada parte de ti. Quiero tus ojos, tus locuras, tu hermoso y maravilloso cuerpo... y podría pasarme horas enteras admirando cada detalle tuyo.</p>
 
-        <p>He cometido mil cagadas en mi vida de las que me arrepiento, pero <strong>tú no estás en esa lista</strong>.</p>
+        <p class="n9">He cometido mil cagadas en mi vida de las que me arrepiento, pero <strong>tú no estás en esa lista</strong>.</p>
 
-        <p>Cada vez que estoy a tu lado no solo quiero abrazarte... quiero más que eso. Quiero recostarme en ti y tú en mí, hablar, tomarnos fotos, fastidiarte, morderte tus labios carnosos (porque sí), y sentir que <strong>nadie puede arruinar ese momento</strong>.</p>
+        <p class="n10">Cada vez que estoy a tu lado no solo quiero abrazarte... quiero más que eso. Quiero recostarme en ti y tú en mí, hablar, tomarnos fotos, fastidiarte, morderte tus labios carnosos (porque sí), y sentir que <strong>nadie puede arruinar ese momento</strong>.</p>
 
-        <p>Y tu alrededor siempre está lleno de luz... pero si esa luz algún día se apagara, te buscaría hasta en la oscuridad más profunda.</p>
+        <p class="n11">Y tu alrededor siempre está lleno de luz... pero si esa luz algún día se apagara, te buscaría hasta en la oscuridad más profunda.</p>
 
         <div class="verso">
-          Lo que siento por ti es un deseo real,<br>
-          pero no hablo de algo vulgar o puramente carnoso...<br>
-          hablo de una conexión de verdad,<br>
-          de respeto y de un sentimiento sincero<br>
-          que me sale desde el fondo del corazón.
+          <p class="n12">Lo que siento por ti es un deseo real,<br>no hablo de algo vulgar o puramente carnoso...<br>hablo de una conexión de verdad,<br>de respeto y de un sentimiento sincero<br>que me sale desde el fondo del corazón.</p>
         </div>
 
-        <p>Toma esto como quieras: como una carta, o una confesión.</p>
+        <p class="n13">Toma esto como quieras: como una carta, o una confesión.</p>
 
-        <p>La verdad es que no sé cómo sacarte de mi mente... y tampoco quiero hacerlo.</p>
+        <p class="n13">La verdad es que no sé cómo sacarte de mi mente... y tampoco quiero hacerlo.</p>
 
-        <p>No tengo claro qué somos, ni qué seremos... y eso a veces me tiene mal.</p>
+        <p class="n14">No tengo claro qué somos, ni qué seremos... y eso a veces me tiene mal.</p>
 
-        <p>Pero yo sé lo que siento, y reconozco mis propios secretos y sentimientos.</p>
+        <p class="n14">Pero yo sé lo que siento, y reconozco mis propios secretos y sentimientos.</p>
 
-        <p class="destacado">Sólo diré que, si quererte así es perder la cabeza... prefiero perderme contigo a seguir cuerdo sin ti.</p>
+        <p class="n14 destacado">Sólo diré que, si quererte así es perder la cabeza... prefiero perderme contigo a seguir cuerdo sin ti.</p>
       </div>
 
       <div class="carta-footer">
-        <div class="firma">✧ contigo, siempre ✧</div>
-        <div class="corazon">♥</div>
+        <p style="font-style:italic; color:var(--marfil-murio); font-size: clamp(12px, 2.3vw, 14px); margin-bottom:6px;">sin luz, sin miedo, sin volver atrás</p>
+        <div class="firma">✧ con todo este oscuro amor ✧</div>
+        <div class="corazon-gotico">♥</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- DIBUJOS GÓTICOS FLOTANTES DE FONDO (watermarks) -->
-<!-- Arco gótico superior derecho -->
-<svg class="gothic-watermark top-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: 15deg;">
-  <path d="M10 100 L10 40 Q50 5, 90 40 L90 100" fill="none" stroke="#c9a96e" stroke-width="1"/>
-  <circle cx="50" cy="35" r="3" fill="#e8ace1" opacity="0.6"/>
-  <path d="M30 100 L30 55 Q50 40, 70 55 L70 100" fill="none" stroke="#7ab8d4" stroke-width="0.5" opacity="0.5"/>
+<!-- ============ DIBUJOS GÓTICOS DE AMOR — watermarks ============ -->
+
+<!-- Cadena de amor con corazón partido (arriba derecha) -->
+<svg class="gotico-watermark tr" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: 12deg;">
+  <defs>
+    <linearGradient id="chainGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a87b3a"/>
+      <stop offset="100%" stop-color="#5c1f3f"/>
+    </linearGradient>
+  </defs>
+  <!-- Cadena de eslabones -->
+  <g fill="none" stroke="url(#chainGrad)" stroke-width="0.8">
+    <ellipse cx="20" cy="30" rx="6" ry="4" stroke-width="0.8"/>
+    <ellipse cx="20" cy="30" rx="3" ry="2" fill="none" opacity="0.4"/>
+    <ellipse cx="50" cy="50" rx="6" ry="4" stroke-width="0.8"/>
+    <ellipse cx="50" cy="50" rx="3" ry="2" fill="none" opacity="0.4"/>
+    <ellipse cx="80" cy="30" rx="6" ry="4" stroke-width="0.8"/>
+    <ellipse cx="80" cy="30" rx="3" ry="2" fill="none" opacity="0.4"/>
+    <ellipse cx="30" cy="70" rx="5" ry="3.5" stroke-width="0.7"/>
+    <ellipse cx="70" cy="70" rx="5" ry="3.5" stroke-width="0.7"/>
+  </g>
+  <!-- Corazón partido / quebrado gótico -->
+  <g fill="none" stroke="#8a3a6b" stroke-width="1">
+    <path d="M50 30 C 40 25, 25 25, 25 40 C 25 50, 35 55, 42 50 C 44 48, 46 50, 48 52" />
+    <path d="M50 30 C 60 25, 75 25, 75 40 C 75 50, 65 55, 58 50 C 56 48, 54 50, 52 52" />
+    <!-- Grieta central -->
+    <line x1="50" y1="30" x2="50" y2="62" stroke-width="0.6" stroke="#c4a35a" opacity="0.6"/>
+    <!-- Sangre goteando -->
+    <g fill="#8a3a6b" opacity="0.5">
+      <circle cx="50" cy="65" r="2"/>
+      <circle cx="48" cy="70" r="1.2"/>
+      <circle cx="52" cy="73" r="1"/>
+      <circle cx="49" cy="76" r="0.8"/>
+    </g>
+  </g>
+  <!-- Anillo dorado alrededor -->
+  <circle cx="50" cy="50" r="35" fill="none" stroke="#a87b3a" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="50" cy="50" r="30" fill="none" stroke="#c4a35a" stroke-width="0.4" opacity="0.2"/>
 </svg>
 
-<!-- Rosa gótica inferior izquierda -->
-<svg class="gothic-watermark bottom-left" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: -10deg;">
-  <g fill="none" stroke="#e8ace1" stroke-width="0.6">
-    <path d="M50 20 C 45 35, 30 45, 35 60 C 30 70, 35 80, 50 75 C 65 80, 70 70, 65 60 C 70 45, 55 35, 50 20 Z"/>
-    <path d="M50 20 C 60 30, 70 45, 65 60 C 70 68, 62 75, 55 70 C 48 75, 40 68, 45 60 C 40 45, 50 30, 50 20 Z" opacity="0.5"/>
-    <circle cx="50" cy="55" r="4" fill="#c9a96e" opacity="0.4"/>
+<!-- Calavera de amor gótico (abajo izquierda) -->
+<svg class="gotico-watermark bl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: -8deg;">
+  <defs>
+    <linearGradient id="skullGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a3a6b"/>
+      <stop offset="100%" stop-color="#1b1f40"/>
+    </linearGradient>
+  </defs>
+  <!-- Cráneo con corazón -->
+  <g>
+    <!-- Cavity craneal -->
+    <circle cx="50" cy="40" r="22" fill="url(#skullGrad)" opacity="0.7"/>
+    <circle cx="50" cy="40" r="18" fill="none" stroke="#c4a35a" stroke-width="0.4" opacity="0.3"/>
+    <!-- Ojos — corazón dentro -->
+    <circle cx="40" cy="38" r="5" fill="none" stroke="#8a3a6b" stroke-width="0.6"/>
+    <path d="M40 36 L38 39 L35 37 L38 40 L40 37 Z" fill="#c4a35a" opacity="0.6"/>
+    <circle cx="60" cy="38" r="5" fill="none" stroke="#8a3a6b" stroke-width="0.6"/>
+    <path d="M60 36 L58 39 L55 37 L58 40 L60 37 Z" fill="#c4a35a" opacity="0.6"/>
+    <!-- Nariz -->
+    <path d="M50 44 L47 50 L53 50 Z" fill="#1b1f40" opacity="0.8"/>
+    <!-- Boca con corazón -->
+    <path d="M42 58 Q50 64, 58 58" fill="none" stroke="#8a3a6b" stroke-width="1"/>
+    <path d="M46 59 L44 61 L42 59 L44 57 Z M50 58 L48 60 L46 58 L48 56 Z M54 59 L52 61 L50 59 L52 57 Z M58 58 L56 60 L54 58 L56 56 Z" fill="#c4a35a" opacity="0.5"/>
+    <!-- Cejas angostas góticas -->
+    <path d="M34 28 L44 32" stroke="#a87b3a" stroke-width="0.5" opacity="0.6"/>
+    <path d="M56 32 L66 28" stroke="#a87b3a" stroke-width="0.5" opacity="0.6"/>
+  </g>
+  <!-- Corazón flotando arriba -->
+  <g fill="#8a3a6b" opacity="0.5" transform="translate(50,15)">
+    <path d="M0 -6 C -5 -12, -12 -6, 0 3 L0 8 L0 3 C12 -6, 5 -12, 0 -6 Z"/>
+    <path d="M0 0 C -3 -5, -8 -3, 0 4 Z" fill="#c4a35a" opacity="0.4"/>
+  </g>
+  <!-- Anillos de amor alrededor del cráneo -->
+  <g fill="none" stroke="#a87b3a" stroke-width="0.5" opacity="0.4">
+    <circle cx="50" cy="40" r="30"/>
+    <circle cx="50" cy="40" r="33" opacity="0.3"/>
+  </g>
+  <!-- Sangre goteando del cráneo -->
+  <g fill="#8a3a6b" opacity="0.4">
+    <circle cx="50" cy="63" r="1.5"/>
+    <circle cx="49" cy="66" r="1"/>
+    <circle cx="51" cy="68" r="0.8"/>
+    <circle cx="50" cy="70" r="0.6"/>
   </g>
 </svg>
 
-<!-- Calavera gótica inferior derecha -->
-<svg class="gothic-watermark bottom-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: 25deg;">
-  <g fill="none" stroke="#7ab8d4" stroke-width="0.8" opacity="0.7">
-    <!-- cráneo -->
-    <circle cx="50" cy="45" r="22" />
-    <!-- ojillos -->
-    <circle cx="40" cy="42" r="4" />
-    <circle cx="60" cy="42" r="4" />
-    <!-- nariz -->
-    <path d="M50 48 L47 55 L53 55 Z" />
-    <!-- boca -->
-    <path d="M40 60 Q50 66, 60 60" stroke-width="1"/>
-    <!-- cejas góticas -->
-    <path d="M35 35 L45 33" stroke-width="0.5"/>
-    <path d="M55 33 L65 35" stroke-width="0.5"/>
+<!-- Anillo de boda gótico con joya y espinas (abajo derecha) -->
+<svg class="gotico-watermark br" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: 22deg;">
+  <defs>
+    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c4a35a"/>
+      <stop offset="50%" stop-color="#a87b3a"/>
+      <stop offset="100%" stop-color="#5c1f3f"/>
+    </linearGradient>
+    <radialGradient id="gemGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c98ab5"/>
+      <stop offset="60%" stop-color="#8a3a6b"/>
+      <stop offset="100%" stop-color="#3d4f8c"/>
+    </radialGradient>
+  </defs>
+  <!-- Anillo de boda con espinas -->
+  <g>
+    <circle cx="50" cy="50" r="38" fill="none" stroke="url(#ringGrad)" stroke-width="2.5" opacity="0.8"/>
+    <circle cx="50" cy="50" r="36" fill="none" stroke="#a87b3a" stroke-width="1" opacity="0.4"/>
+    <!-- Joya central rosada/azul -->
+    <circle cx="50" cy="50" r="10" fill="url(#gemGrad)" opacity="0.9"/>
+    <circle cx="50" cy="50" r="6" fill="none" stroke="#c4a35a" stroke-width="0.5" opacity="0.7"/>
+    <circle cx="50" cy="50" r="2" fill="#e8d5a8" opacity="0.8"/>
+    <!-- Rayos de amor -->
+    <g stroke="#c4a35a" stroke-width="0.3" opacity="0.4">
+      <line x1="50" y1="40" x2="50" y2="38"/>
+      <line x1="50" y1="60" x2="50" y2="62"/>
+      <line x1="40" y1="50" x2="38" y2="50"/>
+      <line x1="60" y1="50" x2="62" y2="50"/>
+      <line x1="43" y1="43" x2="41" y2="41"/>
+      <line x1="57" y1="43" x2="59" y2="41"/>
+      <line x1="43" y1="57" x2="41" y2="59"/>
+      <line x1="57" y1="57" x2="59" y2="59"/>
+    </g>
+    <!-- Espinas en el aro -->
+    <g fill="none" stroke="#8a3a6b" stroke-width="0.5" opacity="0.6">
+      <path d="M30 45 L25 43"/>
+      <path d="M25 55 L28 58"/>
+      <path d="M70 45 L75 43"/>
+      <path d="M75 55 L72 58"/>
+      <path d="M45 12 L43 8"/>
+      <path d="M55 12 L57 8"/>
+      <path d="M45 88 L43 92"/>
+      <path d="M55 88 L57 92"/>
+    </g>
+    <!-- Hojas de vid alrededor -->
+    <g fill="none" stroke="#3d4f8c" stroke-width="0.5" opacity="0.5">
+      <path d="M25 40 C 20 35, 18 38, 22 42"/>
+      <path d="M20 60 C 15 55, 13 58, 17 62"/>
+      <path d="M80 40 C 85 35, 87 38, 83 42"/>
+      <path d="M85 60 C 90 55, 92 58, 88 62"/>
+    </g>
+    <!-- Corazón pequeño incrustado en la joya -->
+    <g fill="#c4a35a" opacity="0.6">
+      <path d="M48 50 C 46 48, 44 49, 44 51 C 44 53, 48 54, 48 54 C 48 54, 52 53, 52 51 C 52 49, 50 48, 48 50 Z" transform="scale(0.5) translate(50,50)"/>
+    </g>
   </g>
-  <g fill="#c9a96e" opacity="0.5">
-    <circle cx="20" cy="20" r="1"/>
-    <circle cx="80" cy="15" r="1"/>
-    <circle cx="85" cy="80" r="1"/>
-    <circle cx="15" cy="80" r="1"/>
+  <!-- Estrellas -->
+  <g fill="#c4a35a" opacity="0.5">
+    <circle cx="20" cy="25" r="1"/>
+    <circle cx="80" cy="25" r="0.8"/>
+    <circle cx="85" cy="75" r="1"/>
+    <circle cx="15" cy="75" r="0.9"/>
+    <circle cx="50" cy="12" r="1.2"/>
+    <circle cx="50" cy="88" r="1"/>
   </g>
 </svg>
 
-<!-- Audio de fondo oculto -->
-<audio id="bgMusic" loop autoplay>
-  <source src="https://www.youtube.com/watch?v=oDNrAEY4guY" type="audio/mp4">
+<!-- ============ AUDIO EMPOTRADO ============ -->
+<audio id="bgMusic" loop style="display:none;">
+  <source src="Thecart_audio/theme_audio.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 (function() {
-  // Reproducir música al entrar
-  document.addEventListener('DOMContentLoaded', function() {
+  // Reproducir audio empotrado al interactuar
+  function startMusic() {
     var audio = document.getElementById('bgMusic');
     if (audio) {
-      // Los videos de YouTube no se pueden reproducir directamente con la etiqueta audio,
-      // así que usamos un iframe de YouTube invisible con autoplay.
-      var iframe = document.createElement('iframe');
-      iframe.width = '0';
-      iframe.height = '0';
-      iframe.frameBorder = '0';
-      iframe.allow = 'autoplay; encrypted-media';
-      iframe.allowFullscreen = true;
-      iframe.src = 'https://www.youtube.com/embed/oDNrAEY4guY?autoplay=1&mute=0&controls=0&loop=1&playlist=oDNrAEY4guY&modestbranding=1&showinfo=0&rel=0';
-      iframe.style.position = 'absolute';
-      iframe.style.bottom = '0';
-      iframe.style.right = '0';
-      iframe.style.width = '0';
-      iframe.style.height = '0';
-      iframe.style.border = 'none';
-      iframe.style.overflow = 'hidden';
-      document.body.appendChild(iframe);
+      audio.volume = 0.85; // volumen alto como pediste
+      audio.play().catch(function(e) {
+        console.log('Autoplay bloqueado, el usuario debe pulsar para escuchar.');
+      });
     }
-  });
+  }
 
-  // Transición de intro a carta al hacer click
+  // Al pulsar el botón de entrada — también reproducir música
   var enterBtn = document.getElementById('enterBtn');
   var introOverlay = document.getElementById('introOverlay');
   var cartaContainer = document.getElementById('cartaContainer');
 
   if (enterBtn && introOverlay && cartaContainer) {
     enterBtn.addEventListener('click', function() {
+      // Reproducir audio al abrir la carta
+      startMusic();
       introOverlay.classList.add('hidden');
       setTimeout(function() {
         cartaContainer.classList.add('visible');
       }, 1500);
     });
   }
+
+  // Fallback: intentar reproducir al hacer cualquier click en el documento
+  document.addEventListener('click', function firstClick(e) {
+    var audio = document.getElementById('bgMusic');
+    if (audio && audio.paused && !window._musicStarted) {
+      audio.volume = 0.85;
+      audio.play().then(function() {
+        window._musicStarted = true;
+      }).catch(function() {});
+    }
+  }, { once: true });
 })();
 </script>
 
