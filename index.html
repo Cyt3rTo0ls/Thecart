@@ -73,7 +73,7 @@ body::before {
   padding: 16px;
 }
 
-/* ============ CAPA DE ENTRADA — TAPIZ DE AMOR OSCURO ============ */
+/* ============ CAPA DE ENTRADA — TAPIZ GÓTICO ============ */
 .intro-overlay {
   position: fixed;
   inset: 0;
@@ -116,7 +116,7 @@ body::before {
   opacity: 0.12;
 }
 
-/* Corona de amor oscuro — dos anillos rosado/azul que giran */
+/* Corona gótica — dos anillos rosado/azul que giran */
 .ama-dos-anillos {
   position: absolute;
   width: 260px;
@@ -247,7 +247,7 @@ body::before {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ============ CARTA — Papel de amor oscuro ============ */
+/* ============ CARTA — Papel gótico ============ */
 .carta-container {
   width: 100%;
   max-width: 560px;
@@ -291,7 +291,7 @@ body::before {
   pointer-events: none;
 }
 
-/* Esquinas góticas de amor — cadenas adornadas */
+/* Esquinas góticas — cadenas adornadas */
 .esquina {
   position: absolute;
   width: 50px;
@@ -396,38 +396,7 @@ body::before {
 
 .carta-body em { color: var(--azul-aciento); }
 
-/* Flor de lencería gótica de amor — dibujo SVG */
-.loto-lencerio-divider {
-  text-align: center;
-  margin: 22px 0;
-  padding: 10px 0;
-  position: relative;
-}
-
-.loto-lencerio-divider svg {
-  width: clamp(110px, 22vw, 160px);
-  height: auto;
-  filter: drop-shadow(0 0 10px rgba(201,138,181,0.25));
-  animation: flota-loto 5s ease-in-out infinite;
-}
-
-@keyframes flota-loto {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-.loto-lencerio-divider::before,
-.loto-lencerio-divider::after {
-  content: '';
-  display: inline-block;
-  width: 30px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--azul-aciento), transparent);
-  vertical-align: middle;
-  margin: 0 12px;
-}
-
-/* Verso — recuadro de amor oscuro */
+/* Verso — recuadro gótico */
 .verso {
   text-align: center;
   font-style: italic;
@@ -494,7 +463,7 @@ body::before {
   56% { transform: scale(1); }
 }
 
-/* ============ DIBUJOS GÓTICOS DE AMOR FLOTANTES ============ */
+/* ============ DIBUJOS GÓTICOS FLOTANTES ============ */
 .gotico-watermark {
   position: fixed;
   pointer-events: none;
@@ -576,7 +545,7 @@ body::before {
       <circle cx="30" cy="370" r="3" fill="#a87b3a"/>
       <circle cx="370" cy="370" r="3" fill="#a87b3a"/>
     </g>
-    <!-- Espinas de amor gótico -->
+    <!-- Espinas góticas -->
     <g fill="none" stroke="#8a3a6b" stroke-width="0.6" opacity="0.5">
       <path d="M200 40 C 200 40, 230 80, 260 120 C 290 100, 320 80, 330 100 C 345 110, 350 130, 330 150 C 350 180, 340 210, 310 220 C 320 250, 300 270, 280 260 C 260 270, 240 280, 220 270 C 200 280, 200 220, 200 220 C 200 220, 200 280, 200 280 C 200 280, 200 220, 200 220 C 180 270, 160 280, 140 270 C 120 280, 100 270, 110 260 C 90 270, 70 250, 80 220 C 50 210, 40 180, 60 150 C 40 130, 45 110, 60 100 C 70 80, 100 100, 130 120 C 160 80, 200 40, 200 40 Z"/>
     </g>
@@ -599,7 +568,7 @@ body::before {
     </g>
   </svg>
 
-  <!-- Dos anillos rosado y azul girando (encuadre de amor) -->
+  <!-- Dos anillos rosado y azul girando (encuadre) -->
   <div class="ama-dos-anillos">
     <div class="anillo-rosa"></div>
     <div class="anillo-azul"></div>
@@ -609,7 +578,7 @@ body::before {
   <div class="gloria-rosa-azul"></div>
 
   <h1 class="intro-titulo">✦ Thecart ✦</h1>
-  <p class="intro-sub">— carta de amor oscuro —</p>
+  <p class="intro-sub">— una carta gótica —</p>
 
   <button class="intro-boton" id="enterBtn">✦ Abrir la carta ✦</button>
 </div>
@@ -626,7 +595,7 @@ body::before {
       <div class="carta-header">
         <h1>✧ Thecart ✧</h1>
         <div class="raya"></div>
-        <div class="fecha">una confesión de amor oscuro, para ti</div>
+        <div class="fecha">una confesión gótica, para ti</div>
       </div>
 
       <div class="carta-body">
@@ -634,73 +603,171 @@ body::before {
 
         <p class="n2">tal vez estemos locos o seamos raros, pero prefiero eso mil veces antes que ser el típico "hombre" que solo busca tener relaciones sexuales o algo efímero.</p>
 
-        <p class="n3">No sé hasta qué punto llegaré en esta vida, o en lo nuestro contigo... pero estoy <em>completamente seguro</em> de que quiero que te quedes a mi lado lo más que se pueda.</p>
+        <p class="n3">No sé hasta qué punto llegaré en esta vida, o en lo nuestro contigo... pero estoy <em>completamente seguro</em> de que quiero que te quedes a mi lado lo más que se pueda.</p>        <p class="n4">Más que el centro de mi universo, eres para mí algo especial que quiero cuidar para que nunca se marchite.</p>
 
-        <p class="n4">Más que el centro de mi universo, eres para mí como una <strong>flor de loto</strong>, una flor especial que quiero cuidar para que nunca se marchite.</p>
-
-        <!-- Flor de loto gótica de amor -->
-        <div class="loto-lencerio-divider">
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Dibujos góticos: velas, espinas, cerraduras, corazón, anillo -->
+        <div class="goth-drawings-row">
+          <!-- Vela gótica -->
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <radialGradient id="lotoGradDark" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#c98ab5"/>
-                <stop offset="50%" stop-color="#8a3a6b"/>
-                <stop offset="100%" stop-color="#3d4f8c"/>
-              </radialGradient>
-              <linearGradient id="petalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="v1Grad" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#c98ab5"/>
                 <stop offset="100%" stop-color="#5c1f3f"/>
               </linearGradient>
+              <radialGradient id="v1Flame" cx="50%" cy="70%" r="50%">
+                <stop offset="0%" stop-color="#c4a35a"/>
+                <stop offset="50%" stop-color="#8a3a6b"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </radialGradient>
             </defs>
-            <!-- Hojas inferiores -->
-            <g fill="none" stroke="#3d4f8c" stroke-width="1" opacity="0.7">
-              <path d="M100 185 C 80 165, 40 135, 45 95"/>
-              <path d="M100 185 C 120 165, 160 135, 155 95"/>
-              <path d="M100 185 C 60 175, 20 155, 25 115"/>
-              <path d="M100 185 C 140 175, 180 155, 175 115"/>
+            <!-- Vela -->
+            <rect x="32" y="35" width="16" height="30" fill="url(#v1Grad)" opacity="0.8" rx="1"/>
+            <line x1="32" y1="40" x2="48" y2="40" stroke="#a87b3a" stroke-width="0.4" opacity="0.4"/>
+            <line x1="32" y1="48" x2="48" y2="48" stroke="#a87b3a" stroke-width="0.4" opacity="0.4"/>
+            <line x1="32" y1="56" x2="48" y2="56" stroke="#a87b3a" stroke-width="0.4" opacity="0.4"/>
+            <!-- Mechón -->
+            <line x1="40" y1="35" x2="40" y2="30" stroke="#c4a35a" stroke-width="0.6"/>
+            <!-- Fuego -->
+            <path d="M40 30 C 35 25, 33 18, 40 12 C 44 15, 47 20, 40 30 Z" fill="url(#v1Flame)" opacity="0.9"/>
+            <circle cx="40" cy="20" r="2" fill="#c4a35a" opacity="0.7"/>
+            <!-- Luz -->
+            <circle cx="40" cy="22" r="20" fill="rgba(201,138,181,0.06)"/>
+          </svg>
+
+          <!-- Rosa de espino gótica -->
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="roseGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8a3a6b"/>
+                <stop offset="100%" stop-color="#1b1f40"/>
+              </linearGradient>
+            </defs>
+            <!-- Tallo y espinas -->
+            <path d="M40 70 L40 40" stroke="#3d4f8c" stroke-width="1.2" fill="none" opacity="0.7"/>
+            <path d="M40 60 L35 55" stroke="#8a3a6b" stroke-width="0.8" opacity="0.6"/>
+            <path d="M40 55 L45 50" stroke="#8a3a6b" stroke-width="0.8" opacity="0.6"/>
+            <path d="M40 48 L36 44" stroke="#8a3a6b" stroke-width="0.8" opacity="0.6"/>
+            <!-- Hojas -->
+            <path d="M40 65 C 30 60, 25 62, 30 55" fill="none" stroke="#3d4f8c" stroke-width="0.8" opacity="0.5"/>
+            <path d="M40 65 C 50 60, 55 62, 50 55" fill="none" stroke="#3d4f8c" stroke-width="0.8" opacity="0.5"/>
+            <!-- Pétalos exteriores -->
+            <g fill="url(#roseGrad)" opacity="0.75">
+              <path d="M40 35 C 36 25, 22 25, 22 35 C 22 42, 28 45, 40 45 C 52 45, 58 42, 58 35 C 58 25, 44 25, 40 35 Z"/>
+              <path d="M40 38 C 38 30, 28 30, 28 38 C 28 43, 33 46, 40 46 C 47 46, 52 43, 52 38 C 52 30, 42 30, 40 38 Z" opacity="0.6"/>
+              <path d="M40 40 C 39 34, 34 34, 34 40 C 34 44, 37 45, 40 45 C 43 45, 46 44, 46 40 C 46 34, 41 34, 40 40 Z" opacity="0.4"/>
             </g>
-            <!-- Pétalos exteriores oscuros -->
-            <g fill="url(#petalGrad)" opacity="0.8">
-              <path d="M100 50 C 95 70, 78 92, 83 112 C 78 122, 85 132, 100 128 C 115 132, 122 122, 117 112 C 122 92, 105 70, 100 50 Z"/>
-              <path d="M100 50 C 78 65, 52 80, 56 105 C 52 115, 62 125, 95 115 C 108 125, 135 115, 140 105 C 145 80, 120 65, 100 50 Z" opacity="0.55"/>
-              <path d="M100 55 C 125 70, 150 90, 140 115 C 144 122, 135 130, 115 120 C 100 130, 90 122, 95 112 C 80 90, 95 70, 100 55 Z" opacity="0.45"/>
+            <!-- Espinas en pétalos -->
+            <g fill="none" stroke="#c4a35a" stroke-width="0.4" opacity="0.5">
+              <path d="M25 30 L23 28"/>
+              <path d="M55 30 L57 28"/>
+              <path d="M25 40 L23 42"/>
+              <path d="M55 40 L57 42"/>
+              <path d="M30 25 L28 23"/>
+              <path d="M50 25 L52 23"/>
             </g>
-            <!-- Pétalos interiores rosados -->
-            <g fill="var(--rosa-suave)" opacity="0.6">
-              <path d="M100 70 C 88 82, 70 90, 75 105 C 68 108, 65 115, 80 115 C 95 115, 105 115, 110 108 C 115 95, 105 80, 100 70 Z"/>
-              <path d="M100 72 C 112 80, 130 88, 126 105 C 132 108, 135 115, 120 115 C 105 115, 95 115, 90 108 C 85 95, 98 80, 100 72 Z" opacity="0.5"/>
+            <!-- Centro -->
+            <circle cx="40" cy="40" r="3" fill="#a87b3a" opacity="0.7"/>
+            <circle cx="40" cy="40" r="1.5" fill="#c4a35a" opacity="0.9"/>
+          </svg>
+
+          <!-- Cerradura gótica -->
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="lockGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#a87b3a"/>
+                <stop offset="100%" stop-color="#5c1f3f"/>
+              </linearGradient>
+            </defs>
+            <!-- Cuerpo de la cerradura -->
+            <rect x="25" y="35" width="30" height="28" rx="3" fill="url(#lockGrad)" opacity="0.85"/>
+            <rect x="25" y="35" width="30" height="28" rx="3" fill="none" stroke="#a87b3a" stroke-width="0.6" opacity="0.6"/>
+            <!-- Anillo de la cerradura -->
+            <path d="M33 35 L33 22 C 33 16, 47 16, 47 22 L47 35" fill="none" stroke="url(#lockGrad)" stroke-width="2.5" opacity="0.9"/>
+            <path d="M33 35 L33 22 C 33 16, 47 16, 47 22 L47 35" fill="none" stroke="#c4a35a" stroke-width="0.5" opacity="0.4"/>
+            <!-- Llave -->
+            <circle cx="40" cy="49" r="5" fill="#1b1f40" opacity="0.9"/>
+            <circle cx="40" cy="49" r="3" fill="none" stroke="#c4a35a" stroke-width="0.6" opacity="0.7"/>
+            <rect x="38" y="54" width="4" height="8" fill="url(#lockGrad)" opacity="0.8"/>
+            <!-- Viejo grabado -->
+            <path d="M28 55 L52 55" stroke="#5c1f3f" stroke-width="0.4" opacity="0.5"/>
+            <text x="40" y="58" font-size="4" text-anchor="middle" fill="#c4a35a" opacity="0.3" font-family="serif">M</text>
+          </svg>
+
+          <!-- Candelabro gótico de 3 brazos -->
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="candGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#a87b3a"/>
+                <stop offset="100%" stop-color="#5c1f3f"/>
+              </linearGradient>
+            </defs>
+            <!-- Base -->
+            <ellipse cx="40" cy="70" rx="20" ry="3" fill="url(#candGrad)" opacity="0.7"/>
+            <rect x="36" y="60" width="8" height="10" fill="url(#candGrad)" opacity="0.8"/>
+            <!-- Brazo central -->
+            <path d="M40 60 L40 20" stroke="url(#candGrad)" stroke-width="2" fill="none" opacity="0.85"/>
+            <circle cx="40" cy="20" r="3" fill="none" stroke="#c4a35a" stroke-width="0.5" opacity="0.6"/>
+            <!-- Mecha central -->
+            <line x1="40" y1="20" x2="40" y2="15" stroke="#c4a35a" stroke-width="0.6"/>
+            <!-- Luz central -->
+            <circle cx="40" cy="17" r="8" fill="rgba(201,138,181,0.08)"/>
+            <!-- Brazo izquierdo -->
+            <path d="M40 40 L20 30 L18 22" stroke="url(#candGrad)" stroke-width="1.5" fill="none" opacity="0.75"/>
+            <circle cx="18" cy="22" r="2.5" fill="none" stroke="#c4a35a" stroke-width="0.4" opacity="0.5"/>
+            <line x1="18" y1="22" x2="18" y2="18" stroke="#c4a35a" stroke-width="0.4"/>
+            <circle cx="18" cy="18" r="4" fill="rgba(61,79,140,0.05)"/>
+            <!-- Brazo derecho -->
+            <path d="M40 40 L60 30 L62 22" stroke="url(#candGrad)" stroke-width="1.5" fill="none" opacity="0.75"/>
+            <circle cx="62" cy="22" r="2.5" fill="none" stroke="#c4a35a" stroke-width="0.4" opacity="0.5"/>
+            <line x1="62" y1="22" x2="62" y2="18" stroke="#c4a35a" stroke-width="0.4"/>
+            <circle cx="62" cy="18" r="4" fill="rgba(201,138,181,0.05)"/>
+            <!-- Decoraciones -->
+            <circle cx="40" cy="60" r="2" fill="#a87b3a" opacity="0.5"/>
+            <circle cx="20" cy="30" r="1.5" fill="#a87b3a" opacity="0.4"/>
+            <circle cx="60" cy="30" r="1.5" fill="#a87b3a" opacity="0.4"/>
+          </svg>
+
+          <!-- Anillo gótico (repetido para cerrar la fila) -->
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="r2Grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#c4a35a"/>
+                <stop offset="50%" stop-color="#a87b3a"/>
+                <stop offset="100%" stop-color="#5c1f3f"/>
+              </linearGradient>
+              <radialGradient id="r2Gem" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#c98ab5"/>
+                <stop offset="60%" stop-color="#8a3a6b"/>
+                <stop offset="100%" stop-color="#3d4f8c"/>
+              </radialGradient>
+            </defs>
+            <circle cx="40" cy="40" r="30" fill="none" stroke="url(#r2Grad)" stroke-width="2.5" opacity="0.75"/>
+            <circle cx="40" cy="40" r="28" fill="none" stroke="#a87b3a" stroke-width="0.8" opacity="0.3"/>
+            <circle cx="40" cy="40" r="8" fill="url(#r2Gem)" opacity="0.85"/>
+            <circle cx="40" cy="40" r="5" fill="none" stroke="#c4a35a" stroke-width="0.4" opacity="0.6"/>
+            <circle cx="40" cy="40" r="1.5" fill="#e8d5a8" opacity="0.8"/>
+            <!-- Espinas -->
+            <g fill="none" stroke="#8a3a6b" stroke-width="0.5" opacity="0.5">
+              <path d="M18 35 L14 33"/>
+              <path d="M18 45 L14 47"/>
+              <path d="M62 35 L66 33"/>
+              <path d="M62 45 L66 47"/>
+              <path d="M35 16 L33 12"/>
+              <path d="M45 16 L47 12"/>
+              <path d="M35 64 L33 68"/>
+              <path d="M45 64 L47 68"/>
             </g>
-            <!-- Centro dorado del loto -->
-            <circle cx="100" cy="100" r="10" fill="#a87b3a" opacity="0.85"/>
-            <circle cx="100" cy="100" r="5" fill="#c4a35a" opacity="0.9"/>
-            <circle cx="100" cy="100" r="2" fill="#e8d5a8" opacity="0.8"/>
-            <!-- Estrellas alrededor -->
-            <g fill="#c4a35a" opacity="0.6">
-              <circle cx="100" cy="28" r="1.5"/>
-              <circle cx="155" cy="55" r="1"/>
-              <circle cx="178" cy="105" r="1.2"/>
-              <circle cx="168" cy="155" r="1"/>
-              <circle cx="100" cy="180" r="1.5"/>
-              <circle cx="32" cy="155" r="1"/>
-              <circle cx="22" cy="105" r="1.2"/>
-              <circle cx="32" cy="55" r="1"/>
-              <circle cx="65" cy="38" r="1"/>
-              <circle cx="135" cy="38" r="1"/>
-              <circle cx="75" cy="170" r="1"/>
-              <circle cx="125" cy="170" r="1"/>
-            </g>
-            <!-- Espinas góticas pequeñas en pétalos -->
-            <g fill="none" stroke="#a87b3a" stroke-width="0.4" opacity="0.5">
-              <path d="M100 60 L100 70"/>
-              <path d="M100 90 L100 100"/>
-              <path d="M100 110 L100 120"/>
-              <path d="M80 80 L90 90"/>
-              <path d="M120 80 L110 90"/>
-              <path d="M80 110 L90 100"/>
-              <path d="M120 110 L110 100"/>
+            <!-- Vid -->
+            <g fill="none" stroke="#3d4f8c" stroke-width="0.4" opacity="0.4">
+              <path d="M15 30 C 10 25, 8 28, 12 32"/>
+              <path d="M65 30 C 70 25, 72 28, 68 32"/>
+              <path d="M15 50 C 10 55, 8 52, 12 48"/>
+              <path d="M65 50 C 70 55, 72 52, 68 48"/>
             </g>
           </svg>
         </div>
+
+
 
         <p class="n5">quizás sentir esto (<em>amor</em>) sea un error del ser humano, pero si es así, eres el único error que cometería.</p>
 
@@ -733,16 +800,16 @@ body::before {
 
       <div class="carta-footer">
         <p style="font-style:italic; color:var(--marfil-murio); font-size: clamp(12px, 2.3vw, 14px); margin-bottom:6px;">sin luz, sin miedo, sin volver atrás</p>
-        <div class="firma">✧ con todo este oscuro amor ✧</div>
+        <div class="firma">✧ con todo este amor ✧</div>
         <div class="corazon-gotico">♥</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ============ DIBUJOS GÓTICOS DE AMOR — watermarks ============ -->
+<!-- ============ DIBUJOS GÓTICOS — watermarks ============ -->
 
-<!-- Cadena de amor con corazón partido (arriba derecha) -->
+<!-- Cadena con corazón partido (arriba derecha) -->
 <svg class="gotico-watermark tr" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: 12deg;">
   <defs>
     <linearGradient id="chainGrad" x1="0" y1="0" x2="1" y2="1">
@@ -780,7 +847,7 @@ body::before {
   <circle cx="50" cy="50" r="30" fill="none" stroke="#c4a35a" stroke-width="0.4" opacity="0.2"/>
 </svg>
 
-<!-- Calavera de amor gótico (abajo izquierda) -->
+<!-- Calavera gótica (abajo izquierda) -->
 <svg class="gotico-watermark bl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: -8deg;">
   <defs>
     <linearGradient id="skullGrad" x1="0" y1="0" x2="0" y2="1">
@@ -812,7 +879,7 @@ body::before {
     <path d="M0 -6 C -5 -12, -12 -6, 0 3 L0 8 L0 3 C12 -6, 5 -12, 0 -6 Z"/>
     <path d="M0 0 C -3 -5, -8 -3, 0 4 Z" fill="#c4a35a" opacity="0.4"/>
   </g>
-  <!-- Anillos de amor alrededor del cráneo -->
+  <!-- Anillos alrededor del cráneo -->
   <g fill="none" stroke="#a87b3a" stroke-width="0.5" opacity="0.4">
     <circle cx="50" cy="40" r="30"/>
     <circle cx="50" cy="40" r="33" opacity="0.3"/>
@@ -826,7 +893,7 @@ body::before {
   </g>
 </svg>
 
-<!-- Anillo de boda gótico con joya y espinas (abajo derecha) -->
+<!-- Anillo gótico con joya y espinas (abajo derecha) -->
 <svg class="gotico-watermark br" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="--r: 22deg;">
   <defs>
     <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
@@ -848,7 +915,7 @@ body::before {
     <circle cx="50" cy="50" r="10" fill="url(#gemGrad)" opacity="0.9"/>
     <circle cx="50" cy="50" r="6" fill="none" stroke="#c4a35a" stroke-width="0.5" opacity="0.7"/>
     <circle cx="50" cy="50" r="2" fill="#e8d5a8" opacity="0.8"/>
-    <!-- Rayos de amor -->
+    <!-- Rayos -->
     <g stroke="#c4a35a" stroke-width="0.3" opacity="0.4">
       <line x1="50" y1="40" x2="50" y2="38"/>
       <line x1="50" y1="60" x2="50" y2="62"/>
